@@ -21,7 +21,7 @@ export default function Home() {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ y: 1000, transition: { ease: "backIn", duration: 0.7 } }}
             transition={{ duration: 0.7, ease: "backInOut" }}
-            whileHover={{ scale: 1.05, boxShadow: "0px 0px 10px rgba(0,0,0,0.5)" }}
+            whileHover={{ scale: 1.05}}
           >
             <div className="relative">
               <img src="/main-art.png" alt="Main Art" />
