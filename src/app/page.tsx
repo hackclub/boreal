@@ -5,10 +5,24 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
   const [page, setPage] = useState(-1);
+  const [showNextButton, setShowNextButton] = useState(false);
+
 
   useEffect(() => {
     setPage(0);
   }, []);
+
+  useEffect(() => {
+    if (page >= 1) {
+      const timer = setTimeout(() => {
+        setShowNextButton(true);
+      }, 5000); 
+
+      return () => clearTimeout(timer);
+    } else {
+      setShowNextButton(false);
+    }
+  }, [page]);
 
   return (
     <main>
@@ -66,16 +80,23 @@ export default function Home() {
               </div>
             </div>
 
-            <motion.button
-              onClick={() => setPage(2)}
-              className="bg-[#76728B] mt-5 py-2 px-10 text-[#F1EDDD] text-3xl border-[3px] border-[#6D5C55] block m-auto"
-              style={{
-                boxShadow: "#F1EDDD 0px 0px 0px 2px, #6D5C55 0px 0px 0px 4px",
-                WebkitTextStroke: "0.4px #320C0C",
-              }}
-            >
-              NEXT
-            </motion.button>
+            <AnimatePresence>
+              {showNextButton && (
+                <motion.button
+                  onClick={() => setPage(2)}
+                  className="bg-[#76728B] mt-5 py-2 px-10 text-[#F1EDDD] text-3xl border-[3px] border-[#6D5C55] block m-auto"
+                  style={{
+                    boxShadow: "#F1EDDD 0px 0px 0px 2px, #6D5C55 0px 0px 0px 4px",
+                    WebkitTextStroke: "0.4px #320C0C",
+                  }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1 }}
+                >
+                  NEXT
+                </motion.button>
+              )}
+            </AnimatePresence>
             <div className="w-px h-48 bg-[#6D5C55] mx-10 mt-20" />
           </motion.div>
         )}
@@ -107,16 +128,23 @@ export default function Home() {
               </div>
             </div>
 
-            <motion.button
-              onClick={() => setPage(3)}
-              className="bg-[#76728B] mt-5 py-2 px-10 text-[#F1EDDD] text-3xl border-[3px] border-[#6D5C55] block m-auto"
-              style={{
-                boxShadow: "#F1EDDD 0px 0px 0px 2px, #6D5C55 0px 0px 0px 4px",
-                WebkitTextStroke: "0.4px #320C0C",
-              }}
-            >
-              NEXT
-            </motion.button>
+            <AnimatePresence>
+              {showNextButton && (
+                <motion.button
+                  onClick={() => setPage(3)}
+                  className="bg-[#76728B] mt-5 py-2 px-10 text-[#F1EDDD] text-3xl border-[3px] border-[#6D5C55] block m-auto"
+                  style={{
+                    boxShadow: "#F1EDDD 0px 0px 0px 2px, #6D5C55 0px 0px 0px 4px",
+                    WebkitTextStroke: "0.4px #320C0C",
+                  }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1 }}
+                >
+                  NEXT
+                </motion.button>
+              )}
+            </AnimatePresence>
 
             <div className="w-px h-48 bg-[#6D5C55] mx-10 mt-20" />
           </motion.div>
