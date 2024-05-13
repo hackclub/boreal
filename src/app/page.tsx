@@ -169,7 +169,7 @@ export default function Home() {
             </div>
             <div className="sm:flex space-y-10 gap-12">
               <div className="mt-10">
-                <div >
+                <div className="font-Neela sm:text-[55px]">
                   LOREM IPSUM<br></br> DOLOR
                 </div>
                 <div>

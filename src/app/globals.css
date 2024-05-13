@@ -13,3 +13,11 @@ body {
   background-color: #f1eddd;
   -webkit-font-smoothing: antialiased;
 }
+
+
+@font-face {
+  font-family: 'Neela';
+  src: url('/Neela-Demo-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
