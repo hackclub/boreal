@@ -16,16 +16,18 @@ export default function Home() {
         {page === 0 && (
           <motion.div
             key="page-0"
-            className="p-10"
+            className="p-10 cursor-pointer"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ y: 1000, transition: { ease: "backIn", duration: 0.7 } }}
             transition={{ duration: 0.7, ease: "backInOut" }}
+            whileHover={{ scale: 1.05, boxShadow: "0px 0px 10px rgba(0,0,0,0.5)" }}
           >
             <div className="relative">
               <img src="/main-art.png" alt="Main Art" />
             </div>
             <motion.button
+            
               onClick={() => setPage(1)}
               className="bg-[#76728B] mt-2 py-2 px-10 text-[#F1EDDD] text-3xl border-[3px] border-[#6D5C55] block m-auto"
               style={{
@@ -54,6 +56,24 @@ export default function Home() {
             <div className="w-px h-48 bg-[#6D5C55] mx-10" />
           </motion.div>
         )}
+
+        {page === 1 && (
+          <motion.div
+            key="page-1"
+            className="pt-10 flex items-center justify-between min-h-screen flex-col"
+            initial={{ y: -1000, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 1000, transition: { ease: "backIn", duration: 0.7 } }}
+            transition={{ duration: 1, ease: "backInOut", delay: 0.5 }}
+          >
+            <div className="flex-1 flex items-center justify-center">
+              <img src="/art-2.png" alt="Art 3" className="max-w-lg" />
+            </div>
+            <div className="w-px h-48 bg-[#6D5C55] mx-10" />
+          </motion.div>
+        )}
+
+    
       </AnimatePresence>
     </main>
   );
