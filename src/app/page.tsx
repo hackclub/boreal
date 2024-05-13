@@ -2,11 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Faq from "./components/Faq";
 
 export default function Home() {
   const [page, setPage] = useState(-1);
-  const [showNextButton, setShowNextButton] = useState(false);
-
+  const [buttonOpacity, setButtonOpacity] = useState(0);
 
   useEffect(() => {
     setPage(0);
@@ -15,12 +15,12 @@ export default function Home() {
   useEffect(() => {
     if (page >= 1) {
       const timer = setTimeout(() => {
-        setShowNextButton(true);
-      }, 5000); 
+        setButtonOpacity(1);
+      }, 5000);
 
       return () => clearTimeout(timer);
     } else {
-      setShowNextButton(false);
+      setButtonOpacity(0);
     }
   }, [page]);
 
@@ -81,12 +81,13 @@ export default function Home() {
             </div>
 
             <AnimatePresence>
-              {showNextButton && (
+              {buttonOpacity && (
                 <motion.button
                   onClick={() => setPage(2)}
                   className="bg-[#76728B] mt-5 py-2 px-10 text-[#F1EDDD] text-3xl border-[3px] border-[#6D5C55] block m-auto"
                   style={{
-                    boxShadow: "#F1EDDD 0px 0px 0px 2px, #6D5C55 0px 0px 0px 4px",
+                    boxShadow:
+                      "#F1EDDD 0px 0px 0px 2px, #6D5C55 0px 0px 0px 4px",
                     WebkitTextStroke: "0.4px #320C0C",
                   }}
                   initial={{ opacity: 0 }}
@@ -110,31 +111,31 @@ export default function Home() {
             exit={{ y: 1000, transition: { ease: "backIn", duration: 0.7 } }}
             transition={{ duration: 1, ease: "backInOut", delay: 0.5 }}
           >
-              <div className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:text-[16px] text-[10px] sm:px-2 sm:py-4  py-4 px-1 absolute bg-[#F1EDDD] sm:bottom-[44rem]  bottom-[40rem] sm:right-[20rem] right-[0.8rem]">
-              The edge of the valley beheld a vista beyond words <br>
-              </br>  — a world painted by a divine hand.
-              </div>
+            <div className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:text-[16px] text-[10px] sm:px-2 sm:py-4  py-4 px-1 absolute bg-[#F1EDDD] sm:bottom-[44rem]  bottom-[40rem] sm:right-[20rem] right-[0.8rem]">
+              The edge of the valley beheld a vista beyond words <br></br> — a
+              world painted by a divine hand.
+            </div>
             <div className="flex-1 flex items-center justify-center">
-            
               <img
                 src="/art-3.png"
                 alt="Art 3"
                 className="sm:max-w-xl max-w-[350px]"
               />
               <div className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:text-[16px] text-[10px] sm:px-2 sm:py-4  py-4 px-1 absolute bg-[#F1EDDD] sm:bottom-[23rem] bottom-[27rem]  ">
-               As the sun peaked above the horizon, casting a golden glow over the <br>
-               </br> valley, a distant whistle echoed through the air, heralding the arrival of a<br>
-               </br> cross-country odyssey ..
+                As the sun peaked above the horizon, casting a golden glow over
+                the <br></br> valley, a distant whistle echoed through the air,
+                heralding the arrival of a<br></br> cross-country odyssey ..
               </div>
             </div>
 
             <AnimatePresence>
-              {showNextButton && (
+              {buttonOpacity && (
                 <motion.button
                   onClick={() => setPage(3)}
                   className="bg-[#76728B] mt-5 py-2 px-10 text-[#F1EDDD] text-3xl border-[3px] border-[#6D5C55] block m-auto"
                   style={{
-                    boxShadow: "#F1EDDD 0px 0px 0px 2px, #6D5C55 0px 0px 0px 4px",
+                    boxShadow:
+                      "#F1EDDD 0px 0px 0px 2px, #6D5C55 0px 0px 0px 4px",
                     WebkitTextStroke: "0.4px #320C0C",
                   }}
                   initial={{ opacity: 0 }}
@@ -166,6 +167,43 @@ export default function Home() {
                 className="sm:w-[1100px] w-[300px]"
               />
             </div>
+            <div className="sm:flex space-y-10 gap-12">
+              <div className="mt-10">
+                <div >
+                  LOREM IPSUM<br></br> DOLOR
+                </div>
+                <div>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                  <br></br> sed do eiusmod tempor incididunt ut labore et dolore
+                  <br></br> magna aliqua. Ut enim ad minim veniam, quis nostrud
+                  <br></br> exercitation ullamco laboris nisi ut aliquip ex ea
+                  <br></br> commodo consequat. Duis aute irure dolor in<br></br>{" "}
+                  reprehenderit in voluptate velit esse cillum dolore eu <br>
+                  </br>fugiat
+                  nulla pariatur. Excepteur sint occaecat cupidatat<br></br> non
+                  proident, sunt in culpa qui officia deserunt mollit<br></br>{" "}
+                  anim id est laborum.
+                </div>
+
+                <div className="mt-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br>
+                </br> sed do eiusmod tempor incididunt ut labore et dolore<br>
+                </br> magna aliqua. Ut enim ad minim veniam, quis nostrud<br>
+                </br> exercitation ullamco laboris nisi ut aliquip ex ea<br>
+                </br> commodo consequat.
+
+                </div>
+              </div>
+              <div>
+                <img src="/placeholde-rec.png" />
+              </div>
+            </div>
+
+            <div className="mt-10">
+              <img src="/placeholderbox.png" />
+            </div>
+
+            <Faq />
           </motion.div>
         )}
       </AnimatePresence>
