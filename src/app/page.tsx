@@ -55,11 +55,17 @@ export default function Home() {
           >
             <div className="flex-1 flex items-center justify-center">
               <img
-                src="/art-2.png"
+                src="/art-4.png"
                 alt="Art 2"
                 className="sm:max-w-xl max-w-[300px]"
               />
+              <div className="border-2 rounded-[5px] border-[#6D5C55] text-center px-6 py-5 absolute bg-[#F1EDDD] bottom-[17rem]">
+                In the beginning, whispers carried tales of a hidden valley
+                untouched<br></br> by humanity, where emerald forest danced with
+                mist and sapphire<br></br> lakes mirrored the sky
+              </div>
             </div>
+
             <div className="w-px h-48 bg-[#6D5C55] mx-10" />
           </motion.div>
         )}
@@ -75,18 +81,24 @@ export default function Home() {
           >
             <div className="flex-1 flex items-center justify-center">
               <img
-                src="/art-2.png"
+                src="/art-4.png"
                 alt="Art 3"
-                className="sm:max-w-lg max-w-[300px]"
+                className="sm:max-w-xl max-w-[300px]"
               />
+                <div className="border-2 rounded-[5px] border-[#6D5C55] text-center px-6 py-5 absolute bg-[#F1EDDD] bottom-[-38rem] ">
+                In the beginning, whispers carried tales of a hidden valley
+                untouched<br></br> by humanity, where emerald forest danced with
+                mist and sapphire<br></br> lakes mirrored the sky
+              </div>
             </div>
+          
             <div className="w-px h-48 bg-[#6D5C55] mx-10" />
           </motion.div>
         )}
 
-        {page === 1 && (
+        {page === 2 && (
           <motion.div
-            key="page-1"
+            key="page-2"
             className="pt-10 flex items-center justify-between min-h-screen flex-col"
             initial={{ y: -1000, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
