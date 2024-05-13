@@ -57,9 +57,9 @@ export default function Home() {
               <img
                 src="/art-4.png"
                 alt="Art 2"
-                className="sm:max-w-xl max-w-[300px]"
+                className="sm:max-w-xl max-w-[350px]"
               />
-              <div className="border-2 rounded-[5px] border-[#6D5C55] text-center px-6 py-5 absolute bg-[#F1EDDD] bottom-[17rem]">
+              <div className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:px-6 py-5 px-2 absolute sm:text-[16px] text-[10px] bg-[#F1EDDD] sm:bottom-[17rem] bottom-[21rem]">
                 In the beginning, whispers carried tales of a hidden valley
                 untouched<br></br> by humanity, where emerald forest danced with
                 mist and sapphire<br></br> lakes mirrored the sky
@@ -83,17 +83,31 @@ export default function Home() {
               <img
                 src="/art-4.png"
                 alt="Art 3"
-                className="sm:max-w-xl max-w-[300px]"
+                className="sm:max-w-xl max-w-[350px]"
               />
-                <div className="border-2 rounded-[5px] border-[#6D5C55] text-center px-6 py-5 absolute bg-[#F1EDDD] bottom-[-38rem] ">
+                <div className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:text-[16px] text-[10px] sm:px-6 py-5 px-2 absolute bg-[#F1EDDD] sm:bottom-[-33rem] bottom-[-27rem]  ">
                 In the beginning, whispers carried tales of a hidden valley
                 untouched<br></br> by humanity, where emerald forest danced with
                 mist and sapphire<br></br> lakes mirrored the sky
               </div>
             </div>
+
+            <motion.button
+              onClick={() => setPage(2)}
+              className="bg-[#76728B] mt-5 py-2 px-10 text-[#F1EDDD] text-3xl border-[3px] border-[#6D5C55] block m-auto"
+              style={{
+                boxShadow: "#F1EDDD 0px 0px 0px 2px, #6D5C55 0px 0px 0px 4px",
+                WebkitTextStroke: "0.4px #320C0C",
+              }}
+            >
+              NEXT
+            </motion.button>
+         
           
-            <div className="w-px h-48 bg-[#6D5C55] mx-10" />
+            <div className="w-px h-48 bg-[#6D5C55] mx-10 mt-20" />
+            
           </motion.div>
+          
         )}
 
         {page === 2 && (
