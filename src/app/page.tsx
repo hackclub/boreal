@@ -21,13 +21,16 @@ export default function Home() {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ y: 1000, transition: { ease: "backIn", duration: 0.7 } }}
             transition={{ duration: 0.7, ease: "backInOut" }}
-            whileHover={{ scale: 1.05}}
+            whileHover={{
+              scale: 1.05,
+              boxShadow: "0px 0px 10px rgba(0,0,0,0.5)",
+              transition: { duration: 0.125, ease: [0.42, 0, 0.58, 1] },
+            }}
           >
             <div className="relative">
               <img src="/main-art.png" alt="Main Art" />
             </div>
             <motion.button
-            
               onClick={() => setPage(1)}
               className="bg-[#76728B] mt-2 py-2 px-10 text-[#F1EDDD] text-3xl border-[3px] border-[#6D5C55] block m-auto"
               style={{
@@ -51,7 +54,11 @@ export default function Home() {
             transition={{ duration: 1, ease: "backInOut", delay: 0.5 }}
           >
             <div className="flex-1 flex items-center justify-center">
-              <img src="/art-2.png" alt="Art 2" className="max-w-xl" />
+              <img
+                src="/art-2.png"
+                alt="Art 2"
+                className="sm:max-w-xl max-w-[300px]"
+              />
             </div>
             <div className="w-px h-48 bg-[#6D5C55] mx-10" />
           </motion.div>
@@ -67,13 +74,34 @@ export default function Home() {
             transition={{ duration: 1, ease: "backInOut", delay: 0.5 }}
           >
             <div className="flex-1 flex items-center justify-center">
-              <img src="/art-2.png" alt="Art 3" className="max-w-lg" />
+              <img
+                src="/art-2.png"
+                alt="Art 3"
+                className="sm:max-w-lg max-w-[300px]"
+              />
             </div>
             <div className="w-px h-48 bg-[#6D5C55] mx-10" />
           </motion.div>
         )}
 
-    
+        {page === 1 && (
+          <motion.div
+            key="page-1"
+            className="pt-10 flex items-center justify-between min-h-screen flex-col"
+            initial={{ y: -1000, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 1000, transition: { ease: "backIn", duration: 0.7 } }}
+            transition={{ duration: 1, ease: "backInOut", delay: 0.5 }}
+          >
+            <div className="flex-1 flex items-center justify-center">
+              <img
+                src="/placeholder.png"
+                alt="placeholder"
+                className="sm:w-[1100px] w-[300px]"
+              />
+            </div>
+          </motion.div>
+        )}
       </AnimatePresence>
     </main>
   );
