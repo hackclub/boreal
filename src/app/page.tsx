@@ -30,21 +30,23 @@ export default function Home() {
         {page === 0 && (
           <motion.div
             key="page-0"
-            className="p-10 cursor-pointer"
+            className="p-10"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ y: 1000, transition: { ease: "backIn", duration: 0.7 } }}
             transition={{ duration: 0.7, ease: "backInOut" }}
-            whileHover={{
-              scale: 1.05,
-              boxShadow: "0px 0px 10px rgba(0,0,0,0.5)",
-              transition: { duration: 0.125, ease: [0.42, 0, 0.58, 1] },
-            }}
+          
           >
-            <div className="relative">
+            <motion.div
+              whileHover={{
+                scale: 1.05,
+                transition: { duration: 0.125, ease: [0.42, 0, 0.58, 1] },
+              }}
+            className="relative cursor-pointer">
               <img src="/main-art.png" alt="Main Art" />
-            </div>
+            </motion.div>
             <motion.button
+          
               onClick={() => setPage(1)}
               className="bg-[#76728B] mt-2 py-2 px-10 text-[#F1EDDD] text-3xl border-[3px] border-[#6D5C55] block m-auto"
               style={{
