@@ -59,33 +59,7 @@ export default function Home() {
                 alt="Art 2"
                 className="sm:max-w-xl max-w-[350px]"
               />
-              <div className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:px-6 py-5 px-2 absolute sm:text-[16px] text-[10px] bg-[#F1EDDD] sm:bottom-[17rem] bottom-[21rem]">
-                In the beginning, whispers carried tales of a hidden valley
-                untouched<br></br> by humanity, where emerald forest danced with
-                mist and sapphire<br></br> lakes mirrored the sky
-              </div>
-            </div>
-
-            <div className="w-px h-48 bg-[#6D5C55] mx-10" />
-          </motion.div>
-        )}
-
-        {page === 1 && (
-          <motion.div
-            key="page-1"
-            className="pt-10 flex items-center justify-between min-h-screen flex-col"
-            initial={{ y: -1000, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 1000, transition: { ease: "backIn", duration: 0.7 } }}
-            transition={{ duration: 1, ease: "backInOut", delay: 0.5 }}
-          >
-            <div className="flex-1 flex items-center justify-center">
-              <img
-                src="/art-4.png"
-                alt="Art 3"
-                className="sm:max-w-xl max-w-[350px]"
-              />
-                <div className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:text-[16px] text-[10px] sm:px-6 py-5 px-2 absolute bg-[#F1EDDD] sm:bottom-[-33rem] bottom-[-27rem]  ">
+              <div className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:px-6 py-5 px-2 absolute sm:text-[16px] text-[10px] bg-[#F1EDDD] sm:bottom-[22rem] bottom-[26rem]">
                 In the beginning, whispers carried tales of a hidden valley
                 untouched<br></br> by humanity, where emerald forest danced with
                 mist and sapphire<br></br> lakes mirrored the sky
@@ -102,17 +76,50 @@ export default function Home() {
             >
               NEXT
             </motion.button>
-         
-          
             <div className="w-px h-48 bg-[#6D5C55] mx-10 mt-20" />
-            
           </motion.div>
-          
         )}
 
         {page === 2 && (
           <motion.div
             key="page-2"
+            className="pt-10 flex items-center justify-between min-h-screen flex-col"
+            initial={{ y: -1000, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 1000, transition: { ease: "backIn", duration: 0.7 } }}
+            transition={{ duration: 1, ease: "backInOut", delay: 0.5 }}
+          >
+            <div className="flex-1 flex items-center justify-center">
+              <img
+                src="/art-4.png"
+                alt="Art 3"
+                className="sm:max-w-xl max-w-[350px]"
+              />
+              <div className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:text-[16px] text-[10px] sm:px-6 py-5 px-2 absolute bg-[#F1EDDD] sm:bottom-[22rem] bottom-[26rem]  ">
+                In the beginning, whispers carried tales of a hidden valley
+                untouched<br></br> by humanity, where emerald forest danced with
+                mist and sapphire<br></br> lakes mirrored the sky
+              </div>
+            </div>
+
+            <motion.button
+              onClick={() => setPage(3)}
+              className="bg-[#76728B] mt-5 py-2 px-10 text-[#F1EDDD] text-3xl border-[3px] border-[#6D5C55] block m-auto"
+              style={{
+                boxShadow: "#F1EDDD 0px 0px 0px 2px, #6D5C55 0px 0px 0px 4px",
+                WebkitTextStroke: "0.4px #320C0C",
+              }}
+            >
+              NEXT
+            </motion.button>
+
+            <div className="w-px h-48 bg-[#6D5C55] mx-10 mt-20" />
+          </motion.div>
+        )}
+
+        {page === 3 && (
+          <motion.div
+            key="page-3"
             className="pt-10 flex items-center justify-between min-h-screen flex-col"
             initial={{ y: -1000, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
