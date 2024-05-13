@@ -89,16 +89,21 @@ export default function Home() {
             exit={{ y: 1000, transition: { ease: "backIn", duration: 0.7 } }}
             transition={{ duration: 1, ease: "backInOut", delay: 0.5 }}
           >
+              <div className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:text-[16px] text-[10px] sm:px-2 sm:py-4  py-4 px-1 absolute bg-[#F1EDDD] sm:bottom-[44rem]  bottom-[40rem] sm:right-[20rem] right-[0.8rem]">
+              The edge of the valley beheld a vista beyond words <br>
+              </br>  — a world painted by a divine hand.
+              </div>
             <div className="flex-1 flex items-center justify-center">
+            
               <img
-                src="/art-4.png"
+                src="/art-3.png"
                 alt="Art 3"
                 className="sm:max-w-xl max-w-[350px]"
               />
-              <div className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:text-[16px] text-[10px] sm:px-6 py-5 px-2 absolute bg-[#F1EDDD] sm:bottom-[22rem] bottom-[26rem]  ">
-                In the beginning, whispers carried tales of a hidden valley
-                untouched<br></br> by humanity, where emerald forest danced with
-                mist and sapphire<br></br> lakes mirrored the sky
+              <div className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:text-[16px] text-[10px] sm:px-2 sm:py-4  py-4 px-1 absolute bg-[#F1EDDD] sm:bottom-[23rem] bottom-[27rem]  ">
+               As the sun peaked above the horizon, casting a golden glow over the <br>
+               </br> valley, a distant whistle echoed through the air, heralding the arrival of a<br>
+               </br> cross-country odyssey ..
               </div>
             </div>
 
