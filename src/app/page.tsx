@@ -116,8 +116,8 @@ export default function Home() {
 
   useEffect(() => {
     if (page === 3) {
-      const firstAudio = new Audio("/audio/Distant whistle.mp3");
-      const secondAudio = new Audio("/audio/Sunrise.mp3");
+      const firstAudio = new Audio("/audio/Sunrise.mp3.mp3");
+      const secondAudio = new Audio("/audio/Distant whistle.mp3");
 
       firstAudio.volume = 0.1;
       secondAudio.volume = 0.1;
@@ -278,7 +278,7 @@ export default function Home() {
             key="page-3"
             className="pt-10 flex items-center justify-between min-h-screen flex-col"
           >
-            {secondAudioEnded && (
+            {firstAudioEnded && (
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -297,7 +297,7 @@ export default function Home() {
                 alt="Art 3"
                 className="sm:max-w-xl max-w-[350px]"
               />
-              {firstAudioEnded && (
+              {secondAudioEnded && (
                 <div className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:text-[16px] text-[10px] sm:px-10 sm:py-4  py-4 px-1 absolute bg-[#F1EDDD] sm:bottom-[23rem] bottom-[27rem]  ">
                   distant whistle echoed through the air, heralding<br></br> the
                   arrival of a cross-country odyssey
