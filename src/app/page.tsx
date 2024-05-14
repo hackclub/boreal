@@ -7,9 +7,14 @@ import Faq from "./components/Faq";
 export default function Home() {
   const [page, setPage] = useState(-1);
   const [buttonOpacity, setButtonOpacity] = useState(0);
+  const [buttonVisible, setButtonVisible] = useState(false);
 
   useEffect(() => {
     setPage(0);
+    const timer = setTimeout(() => {
+      setButtonVisible(true);
+    }, 4000);
+    return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
@@ -24,6 +29,46 @@ export default function Home() {
     }
   }, [page]);
 
+  useEffect(() => {
+    const audio = new Audio("/bg.m4a");
+    audio.loop = true;
+
+    const playAudio = () => {
+      audio.play().catch((error) => {
+        console.error("audio bleh", error);
+      });
+    };
+
+    const handleUserInteraction = () => {
+      playAudio();
+
+      window.removeEventListener("click", handleUserInteraction);
+      window.removeEventListener("keydown", handleUserInteraction);
+    };
+
+    window.addEventListener("click", handleUserInteraction);
+    window.addEventListener("keydown", handleUserInteraction);
+
+    return () => {
+      audio.pause();
+      audio.currentTime = 0;
+      window.removeEventListener("click", handleUserInteraction);
+      window.removeEventListener("keydown", handleUserInteraction);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (page === 0) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [page]);
+
   return (
     <main>
       <AnimatePresence>
@@ -35,27 +80,42 @@ export default function Home() {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ y: 1000, transition: { ease: "backIn", duration: 0.7 } }}
             transition={{ duration: 0.7, ease: "backInOut" }}
-          
           >
+            <div className="border-2 rounded-[5px] border-[#6D5C55] text-left sm:text-[16px] text-[10px] sm:px-10 sm:py-4  py-4 px-1 absolute z-10 bg-[#F1EDDD] sm:bottom-[14rem]  bottom-[40rem] sm:right-[10rem] right-[0.8rem]">
+              As the dawn of the full moon rises, our<br></br> journey begins
+            </div>
             <motion.div
               whileHover={{
                 scale: 1.05,
                 transition: { duration: 0.125, ease: [0.42, 0, 0.58, 1] },
               }}
-            className="relative cursor-pointer">
-              <img src="/main-art.png" alt="Main Art" />
-            </motion.div>
-            <motion.button
-          
-              onClick={() => setPage(1)}
-              className="bg-[#76728B] mt-2 py-2 px-10 text-[#F1EDDD] text-3xl border-[3px] border-[#6D5C55] block m-auto"
-              style={{
-                boxShadow: "#F1EDDD 0px 0px 0px 2px, #6D5C55 0px 0px 0px 4px",
-                WebkitTextStroke: "0.4px #320C0C",
-              }}
             >
-              BEGIN
-            </motion.button>
+              <motion.div className="relative cursor-pointer sm:w-full sm:h-[95vh]">
+                <img
+                  src="/main-art.png"
+                  alt="Main Art"
+                  className="sm:absolute sm:top-[3rem] sm:left-0 w-full h-full object-cover"
+                />
+              </motion.div>
+              <motion.div className="relative bottom-[5rem] m-auto text-center font-Neela text-[#626543] text-[55px]">
+                WELCOME, VOYAGER
+              </motion.div>
+            </motion.div>
+            {buttonVisible && (
+              <motion.button
+                onClick={() => setPage(1)}
+                className="relative bottom-[4rem] bg-[#76728B] mt-2 py-2 px-10 text-[#F1EDDD] text-3xl border-[3px] border-[#6D5C55] block m-auto"
+                style={{
+                  boxShadow: "#F1EDDD 0px 0px 0px 2px, #6D5C55 0px 0px 0px 4px",
+                  WebkitTextStroke: "0.4px #320C0C",
+                }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+              >
+                BEGIN
+              </motion.button>
+            )}
           </motion.div>
         )}
       </AnimatePresence>
@@ -180,20 +240,18 @@ export default function Home() {
                   <br></br> magna aliqua. Ut enim ad minim veniam, quis nostrud
                   <br></br> exercitation ullamco laboris nisi ut aliquip ex ea
                   <br></br> commodo consequat. Duis aute irure dolor in<br></br>{" "}
-                  reprehenderit in voluptate velit esse cillum dolore eu <br>
-                  </br>fugiat
-                  nulla pariatur. Excepteur sint occaecat cupidatat<br></br> non
-                  proident, sunt in culpa qui officia deserunt mollit<br></br>{" "}
-                  anim id est laborum.
+                  reprehenderit in voluptate velit esse cillum dolore eu{" "}
+                  <br></br>fugiat nulla pariatur. Excepteur sint occaecat
+                  cupidatat<br></br> non proident, sunt in culpa qui officia
+                  deserunt mollit<br></br> anim id est laborum.
                 </div>
 
                 <div className="mt-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br>
-                </br> sed do eiusmod tempor incididunt ut labore et dolore<br>
-                </br> magna aliqua. Ut enim ad minim veniam, quis nostrud<br>
-                </br> exercitation ullamco laboris nisi ut aliquip ex ea<br>
-                </br> commodo consequat.
-
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                  <br></br> sed do eiusmod tempor incididunt ut labore et dolore
+                  <br></br> magna aliqua. Ut enim ad minim veniam, quis nostrud
+                  <br></br> exercitation ullamco laboris nisi ut aliquip ex ea
+                  <br></br> commodo consequat.
                 </div>
               </div>
               <div>
