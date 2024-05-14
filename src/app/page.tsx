@@ -105,16 +105,16 @@ export default function Home() {
                 transition: { duration: 0.125, ease: [0.42, 0, 0.58, 1] },
               }}
             >
-              <motion.div className="relative cursor-pointer sm:w-full sm:h-[90vh]">
+              <div className="relative cursor-pointer sm:w-full sm:h-[90vh]">
                 <img
                   src="/main-art.png"
                   alt="Main Art"
                   className="sm:absolute sm:top-[-3rem] sm:left-0 w-full h-full object-cover"
                 />
-              </motion.div>
-              <motion.div className="relative bottom-[10rem] m-auto text-center font-Neela text-[#626543] text-[55px]">
+              </div>
+              <div className="relative bottom-[10rem] m-auto text-center font-Neela text-[#626543] text-[55px]">
                 WELCOME, VOYAGER
-              </motion.div>
+              </div>
             </motion.div>
             {buttonVisible && (
               <motion.button
@@ -237,6 +237,14 @@ export default function Home() {
         )}
 
         {page === 3 && (
+         
+         
+       <>
+        <div
+        key="page-3"
+        >
+            <img src="/bg.png" className="w-full"  draggable="false" />
+            </div>
           <motion.div
             key="page-3"
             className="pt-10 flex items-center justify-between min-h-screen flex-col"
@@ -288,6 +296,7 @@ export default function Home() {
 
             <Faq />
           </motion.div>
+          </>
         )}
       </AnimatePresence>
     </main>
