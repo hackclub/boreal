@@ -168,7 +168,7 @@ export default function Home() {
             <div className="flex justify-center items-center h-screen">
               <motion.div
                 whileHover={{ scale: 1.1 }}
-                className="text-center font-Neela text-[40px] bg-[#f1eddd] rounded-full w-[700px] h-[700px] flex justify-center items-center cursor-pointer"
+                className="text-center font-extrabold text-[40px] bg-[#f1eddd] rounded-full w-[700px] h-[700px] flex justify-center items-center cursor-pointer"
                 onClick={handleEnterClick}
               >
                 ENTER HERE
