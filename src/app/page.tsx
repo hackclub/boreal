@@ -116,7 +116,7 @@ export default function Home() {
 
   useEffect(() => {
     if (page === 3) {
-      const firstAudio = new Audio("/audio/Sunrise.mp3.mp3");
+      const firstAudio = new Audio("/audio/Sunrise.mp3");
       const secondAudio = new Audio("/audio/Distant whistle.mp3");
 
       firstAudio.volume = 0.1;
