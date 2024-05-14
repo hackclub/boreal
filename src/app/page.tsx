@@ -61,9 +61,11 @@ export default function Home() {
       mainAudio.volume = 0.1;
 
       const playMainAudio = () => {
-        mainAudio.play().catch((error) => {
-          console.error("Main audio error:", error);
-        });
+        setTimeout(() => {
+          mainAudio.play().catch((error) => {
+            console.error("audio crying", error);
+          });
+        }, 3000); 
       };
 
       const handleMainUserInteraction = () => {
