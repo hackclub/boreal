@@ -8,42 +8,33 @@ export default function Home() {
   const [page, setPage] = useState(-1);
   const [buttonOpacity, setButtonOpacity] = useState(0);
   const [buttonVisible, setButtonVisible] = useState(false);
+  const [buttonVisible2, setButtonVisible2] = useState(false);
   const [MainBox, setShowMainBox] = useState(false);
   const [textVisible, setTextVisible] = useState(false);
+  const [bgAudio, setBgAudio] = useState<HTMLAudioElement | null>(null);
+
 
 
   useEffect(() => {
     setPage(0);
   }, []);
 
-  useEffect(() => {
+  const playBgAudio = () => {
     const audio = new Audio("/bg.m4a");
     audio.loop = true;
     audio.volume = 0.05;
 
-    const playAudio = () => {
-      audio.play().catch((error) => {
-        console.error("audio bleh", error);
-      });
-    };
+    audio.play().catch((error) => {
+      console.error("audio bleh", error);
+    });
 
-    const handleUserInteraction = () => {
-      playAudio();
+    setBgAudio(audio);
+  };
 
-      window.removeEventListener("click", handleUserInteraction);
-      window.removeEventListener("keydown", handleUserInteraction);
-    };
-
-    window.addEventListener("click", handleUserInteraction);
-    window.addEventListener("keydown", handleUserInteraction);
-
-    return () => {
-      audio.pause();
-      audio.currentTime = 0;
-      window.removeEventListener("click", handleUserInteraction);
-      window.removeEventListener("keydown", handleUserInteraction);
-    };
-  }, []);
+  const handleEnterClick = () => {
+    setPage(1);
+    playBgAudio();
+  };
 
   useEffect(() => {
     if (page === 1) {
@@ -113,7 +104,7 @@ export default function Home() {
       }, 2000);
 
       audio.addEventListener("ended", () => {
-        setButtonVisible(true);
+        setButtonVisible2(true);
       });
 
       return () => {
@@ -133,7 +124,7 @@ export default function Home() {
               <motion.div
                 whileHover={{ scale: 1.1 }}
                 className="text-center font-Neela text-[40px] bg-[#f1eddd] rounded-full w-[700px] h-[700px] flex justify-center items-center cursor-pointer"
-                onClick={() => setPage(1)}
+                onClick={handleEnterClick}
               >
                 ENTER HERE
               </motion.div>
@@ -222,7 +213,7 @@ export default function Home() {
             </div>
 
             <AnimatePresence>
-              {buttonOpacity && (
+              {buttonVisible2 && (
                 <motion.button
                   onClick={() => setPage(3)}
                   className="bg-[#76728B] mt-5 py-2 px-10 text-[#F1EDDD] text-3xl border-[3px] border-[#6D5C55] block m-auto"
@@ -256,10 +247,10 @@ export default function Home() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
-              className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:text-[16px] text-[10px] sm:px-2 sm:py-4  py-4 px-1 absolute bg-[#F1EDDD] sm:bottom-[44rem]  bottom-[40rem] sm:right-[20rem] right-[0.8rem]"
+              className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:text-[16px] text-[10px] sm:px-5 sm:py-4  py-4 px-1 absolute bg-[#F1EDDD] sm:bottom-[44rem]  bottom-[40rem] sm:right-[20rem] right-[0.8rem]"
             >
-              The edge of the valley beheld a vista beyond words <br></br> — a
-              world painted by a divine hand.
+              As the sun peaks above the horizon, casting a golden glow. What<br>
+              </br> vibrant colors will you see as the light leaks across the plains.
             </motion.div>
             <div className="flex-1 flex items-center justify-center">
               <img
@@ -267,15 +258,14 @@ export default function Home() {
                 alt="Art 3"
                 className="sm:max-w-xl max-w-[350px]"
               />
-              <div className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:text-[16px] text-[10px] sm:px-2 sm:py-4  py-4 px-1 absolute bg-[#F1EDDD] sm:bottom-[23rem] bottom-[27rem]  ">
-                As the sun peaked above the horizon, casting a golden glow over
-                the <br></br> valley, a distant whistle echoed through the air,
-                heralding the arrival of a<br></br> cross-country odyssey ..
+              <div className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:text-[16px] text-[10px] sm:px-10 sm:py-4  py-4 px-1 absolute bg-[#F1EDDD] sm:bottom-[23rem] bottom-[27rem]  ">
+                distant whistle echoed through the air, heralding<br>
+                </br> the arrival of a cross-country odyssey
               </div>
             </div>
 
             <AnimatePresence>
-              {buttonOpacity && (
+              {buttonVisible && (
                 <motion.button
                   onClick={() => setPage(4)}
                   className="bg-[#76728B] mt-5 py-2 px-10 text-[#F1EDDD] text-3xl border-[3px] border-[#6D5C55] block m-auto"
