@@ -8,6 +8,7 @@ export default function Home() {
   const [page, setPage] = useState(-1);
   const [buttonOpacity, setButtonOpacity] = useState(0);
   const [buttonVisible, setButtonVisible] = useState(false);
+  const [MainBox, setShowMainBox] = useState(false);
 
   useEffect(() => {
     setPage(0);
@@ -69,6 +70,14 @@ export default function Home() {
     };
   }, [page]);
 
+  useEffect(() => {
+    const MainBox = setTimeout(() => {
+      setShowMainBox(true);
+    }, 4000); 
+    return () => clearTimeout(MainBox);
+  }, []);
+
+
   return (
     <main>
       <AnimatePresence>
@@ -81,9 +90,15 @@ export default function Home() {
             exit={{ y: 1000, transition: { ease: "backIn", duration: 0.7 } }}
             transition={{ duration: 0.7, ease: "backInOut" }}
           >
-            <div className="border-2 rounded-[5px] border-[#6D5C55] text-left sm:text-[16px] text-[10px] sm:px-10 sm:py-4  py-4 px-1 absolute z-10 bg-[#F1EDDD] sm:bottom-[14rem]  bottom-[40rem] sm:right-[10rem] right-[0.8rem]">
+            {MainBox && (
+            <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            className="border-2 rounded-[5px] border-[#6D5C55] text-left sm:text-[16px] text-[10px] sm:px-10 sm:py-4  py-4 px-1 absolute z-10 bg-[#F1EDDD] sm:bottom-[14rem]  bottom-[40rem] sm:right-[10rem] right-[0.8rem]">
               As the dawn of the full moon rises, our<br></br> journey begins
-            </div>
+            </motion.div>
+        )}
             <motion.div
               whileHover={{
                 scale: 1.05,
@@ -135,11 +150,15 @@ export default function Home() {
                 alt="Art 2"
                 className="sm:max-w-xl max-w-[350px]"
               />
-              <div className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:px-6 py-5 px-2 absolute sm:text-[16px] text-[10px] bg-[#F1EDDD] sm:bottom-[22rem] bottom-[26rem]">
+              <motion.div 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1 }}
+              className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:px-6 py-5 px-2 absolute sm:text-[16px] text-[10px] bg-[#F1EDDD] sm:bottom-[22rem] bottom-[26rem]">
                 In the beginning, whispers carried tales of a hidden valley
                 untouched<br></br> by humanity, where emerald forest danced with
                 mist and sapphire<br></br> lakes mirrored the sky
-              </div>
+              </motion.div>
             </div>
 
             <AnimatePresence>
@@ -173,10 +192,14 @@ export default function Home() {
             exit={{ y: 1000, transition: { ease: "backIn", duration: 0.7 } }}
             transition={{ duration: 1, ease: "backInOut", delay: 0.5 }}
           >
-            <div className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:text-[16px] text-[10px] sm:px-2 sm:py-4  py-4 px-1 absolute bg-[#F1EDDD] sm:bottom-[44rem]  bottom-[40rem] sm:right-[20rem] right-[0.8rem]">
+            <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+            className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:text-[16px] text-[10px] sm:px-2 sm:py-4  py-4 px-1 absolute bg-[#F1EDDD] sm:bottom-[44rem]  bottom-[40rem] sm:right-[20rem] right-[0.8rem]">
               The edge of the valley beheld a vista beyond words <br></br> — a
               world painted by a divine hand.
-            </div>
+            </motion.div>
             <div className="flex-1 flex items-center justify-center">
               <img
                 src="/art-3.png"
