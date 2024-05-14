@@ -245,13 +245,10 @@ export default function Home() {
         >
             <img src="/bg.png" className="w-full"  draggable="false" />
             </div>
-          <motion.div
+          <div
             key="page-3"
             className="pt-10 flex items-center justify-between min-h-screen flex-col"
-            initial={{ y: -1000, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 1000, transition: { ease: "backIn", duration: 0.7 } }}
-            transition={{ duration: 1, ease: "backInOut", delay: 0.5 }}
+           
           >
             <div className="flex-1 flex items-center justify-center">
               <img
@@ -295,7 +292,7 @@ export default function Home() {
             </div>
 
             <Faq />
-          </motion.div>
+          </div>
           </>
         )}
       </AnimatePresence>
