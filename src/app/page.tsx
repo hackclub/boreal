@@ -95,7 +95,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            className="border-2 rounded-[5px] border-[#6D5C55] text-left sm:text-[16px] text-[10px] sm:px-10 sm:py-4  py-4 px-1 absolute z-10 bg-[#F1EDDD] sm:bottom-[14rem]  bottom-[40rem] sm:right-[10rem] right-[0.8rem]">
+            className="border-2 rounded-[5px] border-[#6D5C55] text-left sm:text-[16px] text-[10px] sm:px-10 sm:py-4  py-4 px-1 absolute z-10 bg-[#F1EDDD] sm:bottom-[20rem]  bottom-[40rem] sm:right-[10rem] right-[0.8rem]">
               As the dawn of the full moon rises, our<br></br> journey begins
             </motion.div>
         )}
@@ -105,21 +105,21 @@ export default function Home() {
                 transition: { duration: 0.125, ease: [0.42, 0, 0.58, 1] },
               }}
             >
-              <motion.div className="relative cursor-pointer sm:w-full sm:h-[95vh]">
+              <motion.div className="relative cursor-pointer sm:w-full sm:h-[90vh]">
                 <img
                   src="/main-art.png"
                   alt="Main Art"
-                  className="sm:absolute sm:top-[3rem] sm:left-0 w-full h-full object-cover"
+                  className="sm:absolute sm:top-[-3rem] sm:left-0 w-full h-full object-cover"
                 />
               </motion.div>
-              <motion.div className="relative bottom-[5rem] m-auto text-center font-Neela text-[#626543] text-[55px]">
+              <motion.div className="relative bottom-[10rem] m-auto text-center font-Neela text-[#626543] text-[55px]">
                 WELCOME, VOYAGER
               </motion.div>
             </motion.div>
             {buttonVisible && (
               <motion.button
                 onClick={() => setPage(1)}
-                className="relative bottom-[4rem] bg-[#76728B] mt-2 py-2 px-10 text-[#F1EDDD] text-3xl border-[3px] border-[#6D5C55] block m-auto"
+                className="relative bottom-[10rem] bg-[#76728B] mt-2 py-2 px-10 text-[#F1EDDD] text-3xl border-[3px] border-[#6D5C55] block m-auto"
                 style={{
                   boxShadow: "#F1EDDD 0px 0px 0px 2px, #6D5C55 0px 0px 0px 4px",
                   WebkitTextStroke: "0.4px #320C0C",
