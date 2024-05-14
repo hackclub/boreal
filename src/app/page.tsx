@@ -9,6 +9,8 @@ export default function Home() {
   const [buttonOpacity, setButtonOpacity] = useState(0);
   const [buttonVisible, setButtonVisible] = useState(false);
   const [MainBox, setShowMainBox] = useState(false);
+  const [textVisible, setTextVisible] = useState(false);
+
 
   useEffect(() => {
     setPage(0);
@@ -17,7 +19,7 @@ export default function Home() {
   useEffect(() => {
     const audio = new Audio("/bg.m4a");
     audio.loop = true;
-    audio.volume = 0.03;
+    audio.volume = 0.05;
 
     const playAudio = () => {
       audio.play().catch((error) => {
@@ -65,7 +67,7 @@ export default function Home() {
           mainAudio.play().catch((error) => {
             console.error("audio crying", error);
           });
-        }, 3000); 
+        }, 5000); 
       };
 
       const handleMainUserInteraction = () => {
@@ -94,6 +96,33 @@ export default function Home() {
       };
     }
   }, [page]);
+
+  useEffect(() => {
+    if (page === 2) {
+      const audio = new Audio("/audio/Great Cascade.mp3");
+      audio.volume = 0.1;
+
+      setTimeout(() => {
+        audio.play().catch((error) => {
+          console.error("audio wehh", error);
+        });
+      }, 2000); 
+
+      setTimeout(() => {
+        setTextVisible(true);
+      }, 2000);
+
+      audio.addEventListener("ended", () => {
+        setButtonVisible(true);
+      });
+
+      return () => {
+        audio.pause();
+        audio.currentTime = 0;
+      };
+    }
+  }, [page]);
+
 
   return (
     <main>
@@ -178,16 +207,18 @@ export default function Home() {
                 alt="Art 2"
                 className="sm:max-w-xl max-w-[350px]"
               />
+              {textVisible && (
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1 }}
                 className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:px-6 py-5 px-2 absolute sm:text-[16px] text-[10px] bg-[#F1EDDD] sm:bottom-[22rem] bottom-[26rem]"
               >
-                In the beginning, whispers carried tales of a hidden valley
-                untouched<br></br> by humanity, where emerald forest danced with
-                mist and sapphire<br></br> lakes mirrored the sky
+                In the beginning, we’ll scale a great cascade. How long will we<br>
+                </br> travel, clinging to the edges of these great mountains?
               </motion.div>
+                            )}
+
             </div>
 
             <AnimatePresence>
