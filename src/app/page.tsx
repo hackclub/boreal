@@ -14,6 +14,7 @@ export default function Home() {
   const [firstAudioEnded, setFirstAudioEnded] = useState(false);
   const [secondAudioEnded, setSecondAudioEnded] = useState(false);
   const [bgAudio, setBgAudio] = useState<HTMLAudioElement | null>(null);
+  const [allAboard, setAllAboard] = useState(false)
 
   useEffect(() => {
     setPage(0);
@@ -31,10 +32,14 @@ export default function Home() {
     setBgAudio(audio);
   };
 
+
+
   const handleEnterClick = () => {
     setPage(1);
     playBgAudio();
   };
+  
+
 
   useEffect(() => {
     if (page === 1) {
@@ -159,6 +164,30 @@ export default function Home() {
       };
     }
   }, [page]);
+
+  useEffect(() => {
+    if (page === 4) {
+      const audio = new Audio("/audio/Boreal Express.wav");
+      audio.volume = 0.1;
+
+      setTimeout(() => {
+        audio.play().catch((error) => {
+          console.error("audio wehh", error);
+        });
+      }, 2000);
+
+      setTimeout(() => {
+        setAllAboard(true);
+      }, 2000);
+
+
+      return () => {
+        audio.pause();
+        audio.currentTime = 0;
+      };
+    }
+  }, [page]);
+
 
   return (
     <main>
@@ -331,6 +360,13 @@ export default function Home() {
         {page === 4 && (
           <>
             <div key="page-4">
+            {allAboard && (
+              <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+              className="absolute mt-10 right-20 bg-[#F1EDDD] py-5 px-10 border-black border rounded-[5px]">All Aboard the Boreal Express</motion.div>
+            )}
               <img src="/bg.png" className="w-full" draggable="false" />
             </div>
             <div

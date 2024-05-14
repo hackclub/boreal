@@ -35,3 +35,7 @@ body {
 .pulse-animation {
   animation: pulse 1s infinite;
 }
+
+html {
+  scroll-behavior: smooth;
+}
