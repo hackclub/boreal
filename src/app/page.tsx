@@ -11,9 +11,9 @@ export default function Home() {
   const [buttonVisible2, setButtonVisible2] = useState(false);
   const [MainBox, setShowMainBox] = useState(false);
   const [textVisible, setTextVisible] = useState(false);
+  const [firstAudioEnded, setFirstAudioEnded] = useState(false);
+  const [secondAudioEnded, setSecondAudioEnded] = useState(false);
   const [bgAudio, setBgAudio] = useState<HTMLAudioElement | null>(null);
-
-
 
   useEffect(() => {
     setPage(0);
@@ -58,7 +58,7 @@ export default function Home() {
           mainAudio.play().catch((error) => {
             console.error("audio crying", error);
           });
-        }, 5000); 
+        }, 5000);
       };
 
       const handleMainUserInteraction = () => {
@@ -97,7 +97,7 @@ export default function Home() {
         audio.play().catch((error) => {
           console.error("audio wehh", error);
         });
-      }, 2000); 
+      }, 2000);
 
       setTimeout(() => {
         setTextVisible(true);
@@ -114,6 +114,51 @@ export default function Home() {
     }
   }, [page]);
 
+  useEffect(() => {
+    if (page === 3) {
+      const firstAudio = new Audio("/audio/Distant whistle.mp3");
+      const secondAudio = new Audio("/audio/Sunrise.mp3");
+
+      firstAudio.volume = 0.1;
+      secondAudio.volume = 0.1;
+
+      const playFirstAudio = () => {
+        setTimeout(() => {
+          setFirstAudioEnded(true);
+          firstAudio.play().catch((error) => {
+            console.error("audio bleh:", error);
+          });
+        }, 2000);
+      };
+
+      setTimeout(() => {
+        setFirstAudioEnded(true);
+      }, 2000);
+      const playSecondAudio = () => {
+        setSecondAudioEnded(true);
+        secondAudio.play().catch((error) => {
+          console.error("audio bleh", error);
+        });
+      };
+
+      playFirstAudio();
+
+      firstAudio.addEventListener("ended", () => {
+        playSecondAudio();
+      });
+
+      secondAudio.addEventListener("ended", () => {
+        setButtonVisible(true);
+      });
+
+      return () => {
+        firstAudio.pause();
+        firstAudio.currentTime = 0;
+        secondAudio.pause();
+        secondAudio.currentTime = 0;
+      };
+    }
+  }, [page]);
 
   return (
     <main>
@@ -135,11 +180,7 @@ export default function Home() {
 
       <AnimatePresence>
         {page === 1 && (
-          <motion.div
-            key="page-1"
-            className="p-10"
-           
-          >
+          <motion.div key="page-1" className="p-10">
             {MainBox && (
               <motion.div
                 initial={{ opacity: 0 }}
@@ -150,9 +191,7 @@ export default function Home() {
                 As the dawn of the full moon rises, our<br></br> journey begins
               </motion.div>
             )}
-            <motion.div
-           
-            >
+            <motion.div>
               <div className="relative sm:w-full sm:h-[90vh]">
                 <img
                   src="/main-art.png"
@@ -199,17 +238,17 @@ export default function Home() {
                 className="sm:max-w-xl max-w-[350px]"
               />
               {textVisible && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1 }}
-                className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:px-6 py-5 px-2 absolute sm:text-[16px] text-[10px] bg-[#F1EDDD] sm:bottom-[22rem] bottom-[26rem]"
-              >
-                In the beginning, we’ll scale a great cascade. How long will we<br>
-                </br> travel, clinging to the edges of these great mountains?
-              </motion.div>
-                            )}
-
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1 }}
+                  className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:px-6 py-5 px-2 absolute sm:text-[16px] text-[10px] bg-[#F1EDDD] sm:bottom-[22rem] bottom-[26rem]"
+                >
+                  In the beginning, we’ll scale a great cascade. How long will
+                  we<br></br> travel, clinging to the edges of these great
+                  mountains?
+                </motion.div>
+              )}
             </div>
 
             <AnimatePresence>
@@ -238,30 +277,32 @@ export default function Home() {
           <motion.div
             key="page-3"
             className="pt-10 flex items-center justify-between min-h-screen flex-col"
-            initial={{ y: -1000, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 1000, transition: { ease: "backIn", duration: 0.7 } }}
-            transition={{ duration: 1, ease: "backInOut", delay: 0.5 }}
           >
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-              className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:text-[16px] text-[10px] sm:px-5 sm:py-4  py-4 px-1 absolute bg-[#F1EDDD] sm:bottom-[44rem]  bottom-[40rem] sm:right-[20rem] right-[0.8rem]"
-            >
-              As the sun peaks above the horizon, casting a golden glow. What<br>
-              </br> vibrant colors will you see as the light leaks across the plains.
-            </motion.div>
+            {secondAudioEnded && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+                className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:text-[16px] text-[10px] sm:px-5 sm:py-4  py-4 px-1 absolute bg-[#F1EDDD] sm:bottom-[44rem]  bottom-[40rem] sm:right-[20rem] right-[0.8rem]"
+              >
+                As the sun peaks above the horizon, casting a golden glow. What
+                <br></br> vibrant colors will you see as the light leaks across
+                the plains.
+              </motion.div>
+            )}
+
             <div className="flex-1 flex items-center justify-center">
               <img
                 src="/art-3.png"
                 alt="Art 3"
                 className="sm:max-w-xl max-w-[350px]"
               />
-              <div className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:text-[16px] text-[10px] sm:px-10 sm:py-4  py-4 px-1 absolute bg-[#F1EDDD] sm:bottom-[23rem] bottom-[27rem]  ">
-                distant whistle echoed through the air, heralding<br>
-                </br> the arrival of a cross-country odyssey
-              </div>
+              {firstAudioEnded && (
+                <div className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:text-[16px] text-[10px] sm:px-10 sm:py-4  py-4 px-1 absolute bg-[#F1EDDD] sm:bottom-[23rem] bottom-[27rem]  ">
+                  distant whistle echoed through the air, heralding<br></br> the
+                  arrival of a cross-country odyssey
+                </div>
+              )}
             </div>
 
             <AnimatePresence>
