@@ -9,6 +9,7 @@ export default function Home() {
   const [buttonOpacity, setButtonOpacity] = useState(0);
   const [buttonVisible, setButtonVisible] = useState(false);
   const [buttonVisible2, setButtonVisible2] = useState(false);
+  const [buttonVisible3, setButtonVisible3] = useState(false);
   const [MainBox, setShowMainBox] = useState(false);
   const [textVisible, setTextVisible] = useState(false);
   const [firstAudioEnded, setFirstAudioEnded] = useState(false);
@@ -153,7 +154,7 @@ export default function Home() {
       });
 
       secondAudio.addEventListener("ended", () => {
-        setButtonVisible(true);
+        setButtonVisible3(true);
       });
 
       return () => {
@@ -235,7 +236,7 @@ export default function Home() {
             {buttonVisible && (
               <motion.button
                 onClick={() => setPage(2)}
-                className="relative bottom-[10rem] bg-[#76728B] mt-2 py-2 px-10 text-[#F1EDDD] text-3xl border-[3px] border-[#6D5C55] block m-auto"
+                className="relative bottom-[9rem] bg-[#76728B] mt-2 py-2 px-10 text-[#F1EDDD] text-3xl border-[3px] border-[#6D5C55] block m-auto"
                 style={{
                   boxShadow: "#F1EDDD 0px 0px 0px 2px, #6D5C55 0px 0px 0px 4px",
                   WebkitTextStroke: "0.4px #320C0C",
@@ -243,6 +244,10 @@ export default function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1 }}
+                whileHover={{
+                  scale: 1.1,
+                  transition: { duration: 0.125, ease: [0.42, 0, 0.58, 1] },
+                }}
               >
                 NEXT
               </motion.button>
@@ -293,6 +298,10 @@ export default function Home() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 1 }}
+                  whileHover={{
+                    scale: 1.1,
+                    transition: { duration: 0.125, ease: [0.42, 0, 0.58, 1] },
+                  }}
                 >
                   NEXT
                 </motion.button>
@@ -306,6 +315,10 @@ export default function Home() {
           <motion.div
             key="page-3"
             className="pt-10 flex items-center justify-between min-h-screen flex-col"
+            initial={{ y: -1000, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 1000, transition: { ease: "backIn", duration: 0.7 } }}
+            transition={{ duration: 1, ease: "backInOut", delay: 0.5 }}
           >
             {firstAudioEnded && (
               <motion.div
@@ -335,7 +348,7 @@ export default function Home() {
             </div>
 
             <AnimatePresence>
-              {buttonVisible && (
+              {buttonVisible3 && (
                 <motion.button
                   onClick={() => setPage(4)}
                   className="bg-[#76728B] mt-5 py-2 px-10 text-[#F1EDDD] text-3xl border-[3px] border-[#6D5C55] block m-auto"
@@ -347,6 +360,10 @@ export default function Home() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 1 }}
+                  whileHover={{
+                    scale: 1.1,
+                    transition: { duration: 0.125, ease: [0.42, 0, 0.58, 1] },
+                  }}
                 >
                   NEXT
                 </motion.button>
