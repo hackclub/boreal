@@ -168,7 +168,7 @@ export default function Home() {
 
   useEffect(() => {
     if (page === 4) {
-      const audio = new Audio("/audio/Boreal Express.wav");
+      const audio = new Audio("/audio/All Aboard.mp3");
       audio.volume = 0.1;
 
       setTimeout(() => {
