@@ -12,27 +12,12 @@ export default function Home() {
 
   useEffect(() => {
     setPage(0);
-    const timer = setTimeout(() => {
-      setButtonVisible(true);
-    }, 4000);
-    return () => clearTimeout(timer);
   }, []);
-
-  useEffect(() => {
-    if (page >= 1) {
-      const timer = setTimeout(() => {
-        setButtonOpacity(1);
-      }, 5000);
-
-      return () => clearTimeout(timer);
-    } else {
-      setButtonOpacity(0);
-    }
-  }, [page]);
 
   useEffect(() => {
     const audio = new Audio("/bg.m4a");
     audio.loop = true;
+    audio.volume = 0.03;
 
     const playAudio = () => {
       audio.play().catch((error) => {
@@ -71,11 +56,42 @@ export default function Home() {
   }, [page]);
 
   useEffect(() => {
-    const MainBox = setTimeout(() => {
-      setShowMainBox(true);
-    }, 4000);
-    return () => clearTimeout(MainBox);
-  }, []);
+    if (page === 1) {
+      const mainAudio = new Audio("/audio/Full Moon Dawn.mp3");
+      mainAudio.volume = 0.1;
+
+      const playMainAudio = () => {
+        mainAudio.play().catch((error) => {
+          console.error("Main audio error:", error);
+        });
+      };
+
+      const handleMainUserInteraction = () => {
+        playMainAudio();
+
+        window.removeEventListener("click", handleMainUserInteraction);
+        window.removeEventListener("keydown", handleMainUserInteraction);
+      };
+
+      window.addEventListener("click", handleMainUserInteraction);
+      window.addEventListener("keydown", handleMainUserInteraction);
+
+      mainAudio.addEventListener("play", () => {
+        setShowMainBox(true);
+      });
+
+      mainAudio.addEventListener("ended", () => {
+        setButtonVisible(true);
+      });
+
+      return () => {
+        mainAudio.pause();
+        mainAudio.currentTime = 0;
+        window.removeEventListener("click", handleMainUserInteraction);
+        window.removeEventListener("keydown", handleMainUserInteraction);
+      };
+    }
+  }, [page]);
 
   return (
     <main>
@@ -85,7 +101,7 @@ export default function Home() {
             <div className="flex justify-center items-center h-screen">
               <motion.div
                 whileHover={{ scale: 1.1 }}
-                className="text-center font-Neela text-[40px] bg-white rounded-full w-[700px] h-[700px] flex justify-center items-center cursor-pointer"
+                className="text-center font-Neela text-[40px] bg-[#f1eddd] rounded-full w-[700px] h-[700px] flex justify-center items-center cursor-pointer"
                 onClick={() => setPage(1)}
               >
                 ENTER HERE
@@ -100,10 +116,7 @@ export default function Home() {
           <motion.div
             key="page-1"
             className="p-10"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ y: 1000, transition: { ease: "backIn", duration: 0.7 } }}
-            transition={{ duration: 0.7, ease: "backInOut" }}
+           
           >
             {MainBox && (
               <motion.div
@@ -116,12 +129,9 @@ export default function Home() {
               </motion.div>
             )}
             <motion.div
-              whileHover={{
-                scale: 1.05,
-                transition: { duration: 0.125, ease: [0.42, 0, 0.58, 1] },
-              }}
+           
             >
-              <div className="relative cursor-pointer sm:w-full sm:h-[90vh]">
+              <div className="relative sm:w-full sm:h-[90vh]">
                 <img
                   src="/main-art.png"
                   alt="Main Art"
