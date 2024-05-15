@@ -404,12 +404,18 @@ export default function Home() {
             >
               <div className="flex-1 flex items-center justify-center">
                 <img
-                  src="/poster.svg"
+                  src="/poster2.svg"
                   alt="welcome"
                   className="sm:w-[1100px] w-[300px]"
                 />
               </div>
-              <div className="sm:flex space-y-10 gap-12">
+              <div className="bg-[#C3C6A1] w-full h-screen pt-20 mt-10">
+                <div className="font-Neela text-[#6D5C55] text-[80px] bg-[#C3C6A1] text-center">Register your interest</div>
+                <a href="https://forms.hackclub.com/t/dXZwSPpG1Sus">
+             <img src="/ticket.svg" alt="ticket" draggable="false" className="absolute left-1/2 top-[180rem] transform -translate-x-1/2 -translate-y-1/2" />
+             </a>
+              </div>
+              <div className="sm:flex space-y-10 gap-12 mb-10">
                 <div className="mt-10">
                   <div className="font-Neela sm:text-[55px] brown-stroke text-[#76728B]">
                     What will You do<br></br>with Your time?
