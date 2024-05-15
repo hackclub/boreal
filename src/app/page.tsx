@@ -212,7 +212,8 @@ export default function Home() {
                 transition={{ duration: 1 }}
                 className="border-2 rounded-[5px] border-[#6D5C55] text-left sm:text-[16px] text-[10px] sm:px-10 sm:py-4  py-4 px-1 absolute z-10 bg-[#F1EDDD] sm:bottom-[20rem]  bottom-[40rem] sm:right-[10rem] right-[0.8rem]"
               >
-                As the dawn of the full moon rises, our<br></br> journey will begin...
+                As the dawn of the full moon rises, our<br></br> journey will
+                begin...
               </motion.div>
             )}
             <motion.div>
@@ -321,10 +322,9 @@ export default function Home() {
                 transition={{ duration: 1 }}
                 className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:text-[16px] text-[10px] sm:px-5 sm:py-4  py-4 px-1 absolute bg-[#F1EDDD] sm:bottom-[44rem]  bottom-[40rem] sm:right-[20rem] right-[0.8rem]"
               >
-                As the sun peaks above the horizon, casting a golden glow over the<br>
-                </br> valley. What vibrant colors will you see as the light leaks across
-                the<br>
-                </br> plains.
+                As the sun peaks above the horizon, casting a golden glow over
+                the<br></br> valley. What vibrant colors will you see as the
+                light leaks across the<br></br> plains.
               </motion.div>
             )}
 
@@ -383,9 +383,20 @@ export default function Home() {
                     draggable="false"
                     className="absolute left-1/2 top-[18rem] transform -translate-x-1/2 -translate-y-1/2"
                   />
+               
+  <div className="font-Neela text-[48px] text-[#76728B] text-center absolute bottom-10 left-1/2 transform -translate-x-1/2 w-full">
+    HACK CLUB’S CROSS-COUNTRY ODYSSEY <br />
+    JULY 21-28 • VANCOUVER - MONTREAL
+  
+</div>
+
                 </motion.div>
               )}
-              <img src="/train.png" className="w-full h-screen" draggable="false" />
+              <img
+                src="/train.png"
+                className="w-full h-screen"
+                draggable="false"
+              />
             </div>
             <div
               key="page-3"
