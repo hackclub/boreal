@@ -371,13 +371,13 @@ export default function Home() {
 
         {page === 4 && (
           <>
-           <img src="/flag.svg"  className="absolute"/>
-          <img
-                src="/train.png"
-                className="w-full h-screen"
-                draggable="false"
-              />
-           
+            <img src="/flag.svg" className="absolute" />
+            <img
+              src="/train.png"
+              className="w-full h-screen"
+              draggable="false"
+            />
+
             <div key="page-4">
               {allAboard && (
                 <motion.div
@@ -397,7 +397,6 @@ export default function Home() {
                   </div>
                 </motion.div>
               )}
-              
             </div>
             <div
               key="page-3"
@@ -413,38 +412,76 @@ export default function Home() {
               <div className="sm:flex space-y-10 gap-12">
                 <div className="mt-10">
                   <div className="font-Neela sm:text-[55px] brown-stroke text-[#76728B]">
-                    What will You do<br>
-                    </br>with Your time?
+                    What will You do<br></br>with Your time?
                   </div>
                   <div className="text-[26px]">
-                  7 Nights • 8 Days  • 50 Hackers
+                    7 Nights • 8 Days • 50 Hackers
                   </div>
 
                   <div className="mt-8">
-                   <img src="/route.svg" draggable="false" />
+                    <img src="/route.svg" draggable="false" />
                   </div>
                 </div>
                 <div className="space-y-10">
                   <div>
-                  <img src="/z1.svg" />
+                    <img src="/z1.svg" />
                   </div>
 
                   <div>
-                  <img src="/z2.svg" />
+                    <img src="/z2.svg" />
                   </div>
                 </div>
-                
               </div>
-
-              <div className="mt-10">
+            </div>
+            <div className="bg-[#AAAD83] py-5">
+              <div className="mt-10 px-20">
                 <div className="font-Neela text-[55px] brown-stroke text-[#76728B]">
-                  Experiences that linger<br>
-                  </br>Often Forever...
+                  Experiences that linger<br></br>Often Forever...
+                </div>
+                <div className="text-[26px]">
+                  A Glimpse of what your journey onboard The Boreal Express
+                  would look like
+                </div>
+              </div>
+              <div className="flex justify-center mt-8 gap-10">
+                <div>
+                  <img src="/rock.svg" />
+                  <div className="text-center pt-5 text-[20px] text-[#6D5C55]">The Canadian Rockies</div>
+                </div>
+
+                <div>
+                  <img src="/jasper.svg" />
+                  <div className="text-center pt-5 text-[20px] text-[#6D5C55]">Jasper, Alberta</div>
+                </div>
+
+                <div>
+                  <img src="/vancouver.svg" />
+                  <div className="text-center pt-5 text-[20px] text-[#6D5C55]">Vancuover, British Columbia</div>
                 </div>
               </div>
 
-              <Faq />
+              <div className="flex justify-center mt-20 gap-10 pb-[5rem]">
+                <div>
+                  <img src="/toronto.svg" />
+                  <div className="text-center pt-5 text-[20px] text-[#6D5C55]">Toronto, Ontario
+</div>
+                </div>
+
+                <div>
+                  <img src="/winnipeg.svg" />
+                  <div className="text-center pt-5 text-[20px] text-[#6D5C55]">Winnipeg, Manitoba
+</div>
+                </div>
+
+                <div>
+                  <img src="/rooms.svg" />
+                  <div className="text-center pt-5 text-[20px] text-[#6D5C55]">Rooms on board the Sleeper Car
+</div>
+                </div>
+              </div>
             </div>
+
+            <Faq />
           </>
         )}
       </AnimatePresence>
