@@ -410,10 +410,17 @@ export default function Home() {
                 />
               </div>
               <div className="bg-[#C3C6A1] w-full h-screen pt-20 mt-10">
-                <div className="font-Neela text-[#6D5C55] text-[80px] bg-[#C3C6A1] text-center">Register your interest</div>
+                <div className="font-Neela text-[#6D5C55] text-[80px] bg-[#C3C6A1] text-center">
+                  Register your interest
+                </div>
                 <a href="https://forms.hackclub.com/t/dXZwSPpG1Sus">
-             <img src="/ticket.svg" alt="ticket" draggable="false" className="absolute left-1/2 top-[180rem] transform -translate-x-1/2 -translate-y-1/2" />
-             </a>
+                  <img
+                    src="/ticket.svg"
+                    alt="ticket"
+                    draggable="false"
+                    className="absolute left-1/2 top-[180rem] transform -translate-x-1/2 -translate-y-1/2"
+                  />
+                </a>
               </div>
               <div className="sm:flex space-y-10 gap-12 mb-10">
                 <div className="mt-10">
@@ -452,37 +459,46 @@ export default function Home() {
               <div className="flex justify-center mt-8 gap-10">
                 <div>
                   <img src="/rock.svg" />
-                  <div className="text-center pt-5 text-[20px] text-[#6D5C55]">The Canadian Rockies</div>
+                  <div className="text-center pt-5 text-[20px] text-[#6D5C55]">
+                    The Canadian Rockies
+                  </div>
                 </div>
 
                 <div>
                   <img src="/jasper.svg" />
-                  <div className="text-center pt-5 text-[20px] text-[#6D5C55]">Jasper, Alberta</div>
+                  <div className="text-center pt-5 text-[20px] text-[#6D5C55]">
+                    Jasper, Alberta
+                  </div>
                 </div>
 
                 <div>
                   <img src="/vancouver.svg" />
-                  <div className="text-center pt-5 text-[20px] text-[#6D5C55]">Vancuover, British Columbia</div>
+                  <div className="text-center pt-5 text-[20px] text-[#6D5C55]">
+                    Vancuover, British Columbia
+                  </div>
                 </div>
               </div>
 
               <div className="flex justify-center mt-20 gap-10 pb-[5rem]">
                 <div>
                   <img src="/toronto.svg" />
-                  <div className="text-center pt-5 text-[20px] text-[#6D5C55]">Toronto, Ontario
-</div>
+                  <div className="text-center pt-5 text-[20px] text-[#6D5C55]">
+                    Toronto, Ontario
+                  </div>
                 </div>
 
                 <div>
                   <img src="/winnipeg.svg" />
-                  <div className="text-center pt-5 text-[20px] text-[#6D5C55]">Winnipeg, Manitoba
-</div>
+                  <div className="text-center pt-5 text-[20px] text-[#6D5C55]">
+                    Winnipeg, Manitoba
+                  </div>
                 </div>
 
                 <div>
                   <img src="/rooms.svg" />
-                  <div className="text-center pt-5 text-[20px] text-[#6D5C55]">Rooms on board the Sleeper Car
-</div>
+                  <div className="text-center pt-5 text-[20px] text-[#6D5C55]">
+                    Rooms on board the Sleeper Car
+                  </div>
                 </div>
               </div>
             </div>
