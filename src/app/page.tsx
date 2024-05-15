@@ -384,16 +384,22 @@ export default function Home() {
               transition={{ duration: 1 }}
               className="absolute mt-10 right-20 bg-[#F1EDDD] py-5 px-10 border-black border rounded-[5px]">All Aboard the Boreal Express</motion.div>
             )}
-              <img src="/bg.png" className="w-full" draggable="false" />
+         
+  <img src="/Boreal.svg" draggable="false" className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"/>
+
+              <img src="/train.png" className="w-full" draggable="false" />
             </div>
             <div
               key="page-3"
               className="pt-10 flex items-center justify-between min-h-screen flex-col"
             >
+                   <div className="border-t-4 border-dotted border-[#320C0C] w-[55%] absolute mt-20"> </div>
+
               <div className="flex-1 flex items-center justify-center">
+          
                 <img
-                  src="/placeholder.png"
-                  alt="placeholder"
+                  src="/welcome.png"
+                  alt="welcome"
                   className="sm:w-[1100px] w-[300px]"
                 />
               </div>
