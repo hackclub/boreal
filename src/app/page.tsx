@@ -371,7 +371,13 @@ export default function Home() {
 
         {page === 4 && (
           <>
-            <img src="/flag.svg" />
+           <img src="/flag.svg"  className="absolute"/>
+          <img
+                src="/train.png"
+                className="w-full h-screen"
+                draggable="false"
+              />
+           
             <div key="page-4">
               {allAboard && (
                 <motion.div
@@ -385,17 +391,13 @@ export default function Home() {
                     className="absolute left-1/2 top-[20rem] transform -translate-x-1/2 -translate-y-1/2"
                   />
 
-                  <div className="font-Neela text-[48px] text-[#76728B] text-center absolute bottom-12 left-1/2 transform -translate-x-1/2 w-full">
+                  <div className="font-Neela text-[48px] text-[#76728B] text-center absolute bottom-12 left-1/2 transform -translate-x-1/2 w-full stroke">
                     HACK CLUB’S CROSS-COUNTRY ODYSSEY <br />
                     JULY 21-28 • VANCOUVER - MONTREAL
                   </div>
                 </motion.div>
               )}
-              <img
-                src="/train.png"
-                className="w-full h-screen"
-                draggable="false"
-              />
+              
             </div>
             <div
               key="page-3"
@@ -410,40 +412,35 @@ export default function Home() {
               </div>
               <div className="sm:flex space-y-10 gap-12">
                 <div className="mt-10">
-                  <div className="font-Neela sm:text-[55px]">
-                    LOREM IPSUM<br></br> DOLOR
+                  <div className="font-Neela sm:text-[55px] brown-stroke text-[#76728B]">
+                    What will You do<br>
+                    </br>with Your time?
                   </div>
-                  <div>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    <br></br> sed do eiusmod tempor incididunt ut labore et
-                    dolore
-                    <br></br> magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud
-                    <br></br> exercitation ullamco laboris nisi ut aliquip ex ea
-                    <br></br> commodo consequat. Duis aute irure dolor in
-                    <br></br> reprehenderit in voluptate velit esse cillum
-                    dolore eu <br></br>fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat<br></br> non proident, sunt in culpa qui
-                    officia deserunt mollit<br></br> anim id est laborum.
+                  <div className="text-[26px]">
+                  7 Nights • 8 Days  • 50 Hackers
                   </div>
 
-                  <div className="mt-4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    <br></br> sed do eiusmod tempor incididunt ut labore et
-                    dolore
-                    <br></br> magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud
-                    <br></br> exercitation ullamco laboris nisi ut aliquip ex ea
-                    <br></br> commodo consequat.
+                  <div className="mt-8">
+                   <img src="/route.svg" draggable="false" />
                   </div>
                 </div>
-                <div>
-                  <img src="/placeholde-rec.png" />
+                <div className="space-y-10">
+                  <div>
+                  <img src="/z1.svg" />
+                  </div>
+
+                  <div>
+                  <img src="/z2.svg" />
+                  </div>
                 </div>
+                
               </div>
 
               <div className="mt-10">
-                <img src="/placeholderbox.png" />
+                <div className="font-Neela text-[55px] brown-stroke text-[#76728B]">
+                  Experiences that linger<br>
+                  </br>Often Forever...
+                </div>
               </div>
 
               <Faq />

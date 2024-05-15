@@ -39,3 +39,14 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+
+.stroke {
+  -webkit-text-stroke: 1px black;
+}
+
+.brown-stroke {
+  -webkit-text-stroke: 1px #320C0C;
+}
+
+
