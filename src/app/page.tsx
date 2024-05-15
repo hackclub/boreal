@@ -385,7 +385,7 @@ export default function Home() {
                   />
                 </motion.div>
               )}
-              <img src="/train.png" className="w-full" draggable="false" />
+              <img src="/train.png" className="w-full h-screen" draggable="false" />
             </div>
             <div
               key="page-3"
