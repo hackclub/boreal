@@ -371,6 +371,7 @@ export default function Home() {
 
         {page === 4 && (
           <>
+            <img src="/flag.svg" />
             <div key="page-4">
               {allAboard && (
                 <motion.div
@@ -381,15 +382,13 @@ export default function Home() {
                   <img
                     src="/Boreal.svg"
                     draggable="false"
-                    className="absolute left-1/2 top-[18rem] transform -translate-x-1/2 -translate-y-1/2"
+                    className="absolute left-1/2 top-[20rem] transform -translate-x-1/2 -translate-y-1/2"
                   />
-               
-  <div className="font-Neela text-[48px] text-[#76728B] text-center absolute bottom-10 left-1/2 transform -translate-x-1/2 w-full">
-    HACK CLUB’S CROSS-COUNTRY ODYSSEY <br />
-    JULY 21-28 • VANCOUVER - MONTREAL
-  
-</div>
 
+                  <div className="font-Neela text-[48px] text-[#76728B] text-center absolute bottom-12 left-1/2 transform -translate-x-1/2 w-full">
+                    HACK CLUB’S CROSS-COUNTRY ODYSSEY <br />
+                    JULY 21-28 • VANCOUVER - MONTREAL
+                  </div>
                 </motion.div>
               )}
               <img
