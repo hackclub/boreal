@@ -15,7 +15,7 @@ export default function Home() {
   const [firstAudioEnded, setFirstAudioEnded] = useState(false);
   const [secondAudioEnded, setSecondAudioEnded] = useState(false);
   const [bgAudio, setBgAudio] = useState<HTMLAudioElement | null>(null);
-  const [allAboard, setAllAboard] = useState(false)
+  const [allAboard, setAllAboard] = useState(false);
 
   useEffect(() => {
     setPage(0);
@@ -33,14 +33,10 @@ export default function Home() {
     setBgAudio(audio);
   };
 
-
-
   const handleEnterClick = () => {
     setPage(1);
     playBgAudio();
   };
-  
-
 
   useEffect(() => {
     if (page === 1) {
@@ -181,14 +177,12 @@ export default function Home() {
         setAllAboard(true);
       }, 2000);
 
-
       return () => {
         audio.pause();
         audio.currentTime = 0;
       };
     }
   }, [page]);
-
 
   return (
     <main>
@@ -218,7 +212,7 @@ export default function Home() {
                 transition={{ duration: 1 }}
                 className="border-2 rounded-[5px] border-[#6D5C55] text-left sm:text-[16px] text-[10px] sm:px-10 sm:py-4  py-4 px-1 absolute z-10 bg-[#F1EDDD] sm:bottom-[20rem]  bottom-[40rem] sm:right-[10rem] right-[0.8rem]"
               >
-                As the dawn of the full moon rises, our<br></br> journey begins
+                As the dawn of the full moon rises, our<br></br> journey will begin...
               </motion.div>
             )}
             <motion.div>
@@ -289,7 +283,7 @@ export default function Home() {
               {buttonVisible2 && (
                 <motion.button
                   onClick={() => setPage(3)}
-                  className="bg-[#76728B] mt-5 py-2 px-10 text-[#F1EDDD] text-3xl border-[3px] border-[#6D5C55] block m-auto"
+                  className="bg-[#76728B] mt-5 py-2 px-10 text-[#F1EDDD] text-3xl border-[3px] border-[#6D5C55] block m-auto absolute bottom-[15rem]"
                   style={{
                     boxShadow:
                       "#F1EDDD 0px 0px 0px 2px, #6D5C55 0px 0px 0px 4px",
@@ -327,9 +321,10 @@ export default function Home() {
                 transition={{ duration: 1 }}
                 className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:text-[16px] text-[10px] sm:px-5 sm:py-4  py-4 px-1 absolute bg-[#F1EDDD] sm:bottom-[44rem]  bottom-[40rem] sm:right-[20rem] right-[0.8rem]"
               >
-                As the sun peaks above the horizon, casting a golden glow. What
-                <br></br> vibrant colors will you see as the light leaks across
-                the plains.
+                As the sun peaks above the horizon, casting a golden glow over the<br>
+                </br> valley. What vibrant colors will you see as the light leaks across
+                the<br>
+                </br> plains.
               </motion.div>
             )}
 
@@ -351,7 +346,7 @@ export default function Home() {
               {buttonVisible3 && (
                 <motion.button
                   onClick={() => setPage(4)}
-                  className="bg-[#76728B] mt-5 py-2 px-10 text-[#F1EDDD] text-3xl border-[3px] border-[#6D5C55] block m-auto"
+                  className="bg-[#76728B] mt-5 py-2 px-10 text-[#F1EDDD] text-3xl border-[3px] border-[#6D5C55] block m-auto absolute bottom-[15rem]"
                   style={{
                     boxShadow:
                       "#F1EDDD 0px 0px 0px 2px, #6D5C55 0px 0px 0px 4px",
@@ -377,28 +372,28 @@ export default function Home() {
         {page === 4 && (
           <>
             <div key="page-4">
-            {allAboard && (
-              <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-              className="absolute mt-10 right-20 bg-[#F1EDDD] py-5 px-10 border-black border rounded-[5px]">All Aboard the Boreal Express</motion.div>
-            )}
-         
-  <img src="/Boreal.svg" draggable="false" className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"/>
-
+              {allAboard && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1 }}
+                >
+                  <img
+                    src="/Boreal.svg"
+                    draggable="false"
+                    className="absolute left-1/2 top-[18rem] transform -translate-x-1/2 -translate-y-1/2"
+                  />
+                </motion.div>
+              )}
               <img src="/train.png" className="w-full" draggable="false" />
             </div>
             <div
               key="page-3"
               className="pt-10 flex items-center justify-between min-h-screen flex-col"
             >
-                   <div className="border-t-4 border-dotted border-[#320C0C] w-[55%] absolute mt-20"> </div>
-
               <div className="flex-1 flex items-center justify-center">
-          
                 <img
-                  src="/welcome.png"
+                  src="/poster.svg"
                   alt="welcome"
                   className="sm:w-[1100px] w-[300px]"
                 />
