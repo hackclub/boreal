@@ -330,7 +330,7 @@ export default function Home() {
 
             <div className="flex-1 flex items-center justify-center">
               <img
-                src="/art-3.png"
+                src="/manga2.svg"
                 alt="Art 3"
                 className="sm:max-w-xl max-w-[350px]"
               />
@@ -391,7 +391,7 @@ export default function Home() {
                     className="absolute left-1/2 top-[20rem] transform -translate-x-1/2 -translate-y-1/2"
                   />
 
-                  <div className="font-Neela text-[48px] text-[#76728B] text-center absolute bottom-12 left-1/2 transform -translate-x-1/2 w-full stroke">
+                  <div className="font-Neela text-[42px] text-[#76728B] text-center absolute bottom-12 left-1/2 transform -translate-x-1/2 w-full stroke">
                     HACK CLUB’S CROSS-COUNTRY ODYSSEY <br />
                     JULY 21-28 • VANCOUVER - MONTREAL
                   </div>
@@ -418,14 +418,14 @@ export default function Home() {
                     src="/ticket.png"
                     alt="ticket"
                     draggable="false"
-                    className="absolute left-1/2 top-[180rem] transform -translate-x-1/2 -translate-y-1/2"
+                    className="absolute left-1/2 top-[175rem] transform -translate-x-1/2 -translate-y-1/2"
                   />
                 </a>
               </div>
               <div className="sm:flex space-y-10 gap-12 mb-10">
                 <div className="mt-10">
                   <div className="font-Neela sm:text-[55px] brown-stroke text-[#76728B]">
-                    What will You do<br></br>with Your time?
+                    What will You do<br></br>with your time?
                   </div>
                   <div className="text-[26px] font-bold">
                     7 Nights • 8 Days • 50 Hackers
