@@ -8,7 +8,7 @@ const Faq = () => {
       <div className="px-20 mt-10">
         <div className="flex flex-wrap justify-center gap-8">
           <div className="bg-[#D9D9D9] py-5 px-10 rounded-[5px] flex-1 max-w-md">
-            <div className="font-Neela text-[20px]">
+            <div className="font-bold text-[20px]">
               Who is eligible to receive an invitation?
             </div>
             <div className="text-[20px] mt-2">
@@ -18,7 +18,7 @@ const Faq = () => {
           </div>
 
           <div className="bg-[#D9D9D9] py-5 px-10 rounded-[5px] flex-1 max-w-md">
-            <div className="font-Neela text-[20px]">
+            <div className="font-bold text-[20px]">
               Will travel to Vancouver and from Montreal be Covered?
             </div>
             <div className="text-[20px] mt-2">
@@ -29,7 +29,7 @@ const Faq = () => {
 
         <div className="flex flex-wrap justify-center gap-8 mt-8 mb-10">
           <div className="bg-[#D9D9D9] py-5 px-10 rounded-[5px] flex-1 max-w-md">
-            <div className="font-Neela text-[20px]">
+            <div className="font-bold text-[20px]">
               Will housing, meals, and transport be provided?
             </div>
             <div className="text-[20px] mt-2">
@@ -38,7 +38,7 @@ const Faq = () => {
           </div>
 
           <div className="bg-[#D9D9D9] py-5 px-10 rounded-[5px] flex-1 max-w-md">
-            <div className="font-Neela text-[20px]">
+            <div className="font-bold text-[20px]">
               My parents have concerns, what<br></br>should I do?
             </div>
             <div className="text-[20px] mt-2">

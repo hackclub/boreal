@@ -320,7 +320,7 @@ export default function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1 }}
-                className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:text-[16px] text-[10px] sm:px-5 sm:py-4  py-4 px-1 absolute bg-[#F1EDDD] sm:bottom-[44rem]  bottom-[40rem] sm:right-[20rem] right-[0.8rem]"
+                className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:text-[16px] text-[10px] sm:px-5 sm:py-4  py-4 px-1 absolute bg-[#F1EDDD] sm:bottom-[42rem]  bottom-[40rem] sm:right-[20rem] right-[0.8rem]"
               >
                 As the sun peaks above the horizon, casting a golden glow over
                 the<br></br> valley. What vibrant colors will you see as the
@@ -415,7 +415,7 @@ export default function Home() {
                 </div>
                 <a href="https://forms.hackclub.com/t/dXZwSPpG1Sus">
                   <img
-                    src="/ticket.svg"
+                    src="/ticket.png"
                     alt="ticket"
                     draggable="false"
                     className="absolute left-1/2 top-[180rem] transform -translate-x-1/2 -translate-y-1/2"
@@ -427,12 +427,12 @@ export default function Home() {
                   <div className="font-Neela sm:text-[55px] brown-stroke text-[#76728B]">
                     What will You do<br></br>with Your time?
                   </div>
-                  <div className="text-[26px]">
+                  <div className="text-[26px] font-bold">
                     7 Nights • 8 Days • 50 Hackers
                   </div>
 
                   <div className="mt-8">
-                    <img src="/route.svg" draggable="false" />
+                    <img src="/route2.svg" draggable="false" />
                   </div>
                 </div>
                 <div className="space-y-10">
@@ -459,21 +459,21 @@ export default function Home() {
               <div className="flex justify-center mt-8 gap-10">
                 <div>
                   <img src="/rock.svg" />
-                  <div className="text-center pt-5 text-[20px] text-[#6D5C55]">
+                  <div className="text-center pt-5 text-[20px] text-[#6D5C55] font-bold">
                     The Canadian Rockies
                   </div>
                 </div>
 
                 <div>
                   <img src="/jasper.svg" />
-                  <div className="text-center pt-5 text-[20px] text-[#6D5C55]">
+                  <div className="text-center pt-5 text-[20px] text-[#6D5C55] font-bold">
                     Jasper, Alberta
                   </div>
                 </div>
 
                 <div>
                   <img src="/vancouver.svg" />
-                  <div className="text-center pt-5 text-[20px] text-[#6D5C55]">
+                  <div className="text-center pt-5 text-[20px] text-[#6D5C55] font-bold">
                     Vancuover, British Columbia
                   </div>
                 </div>
@@ -482,21 +482,21 @@ export default function Home() {
               <div className="flex justify-center mt-20 gap-10 pb-[5rem]">
                 <div>
                   <img src="/toronto.svg" />
-                  <div className="text-center pt-5 text-[20px] text-[#6D5C55]">
+                  <div className="text-center pt-5 text-[20px] text-[#6D5C55] font-bold">
                     Toronto, Ontario
                   </div>
                 </div>
 
                 <div>
                   <img src="/winnipeg.svg" />
-                  <div className="text-center pt-5 text-[20px] text-[#6D5C55]">
+                  <div className="text-center pt-5 text-[20px] text-[#6D5C55] font-bold">
                     Winnipeg, Manitoba
                   </div>
                 </div>
 
                 <div>
                   <img src="/rooms.svg" />
-                  <div className="text-center pt-5 text-[20px] text-[#6D5C55]">
+                  <div className="text-center pt-5 text-[20px] text-[#6D5C55] font-bold">
                     Rooms on board the Sleeper Car
                   </div>
                 </div>
