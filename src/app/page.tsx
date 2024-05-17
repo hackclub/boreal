@@ -185,7 +185,13 @@ export default function Home() {
   }, [page]);
 
   return (
-    <main>
+    <>
+    <div className="flex items-center justify-center h-screen sm:hidden">
+      <div className="text-center py-5 border-2 border-black pl-20 pr-20">
+        Rotate your device<br></br>to landscape
+      </div>
+    </div>
+    <main className="hidden sm:block">
       <AnimatePresence>
         {page === 0 && (
           <div key="page-0" className="bg-[#76728B] h-screen">
@@ -508,5 +514,6 @@ export default function Home() {
         )}
       </AnimatePresence>
     </main>
+    </>
   );
 }
