@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Faq from "../components/Faq";
 import { useSearchParams } from "next/navigation";
@@ -91,7 +91,7 @@ function MainPage() {
         )}
       </div>
       <div key="page-3" className="pt-10 flex items-center justify-between min-h-screen flex-col">
-        <img src="/poster2.svg" />
+        <img src="/poster2.svg" className="max-w-[80%]" />
 
         <div className="sm:flex space-y-10 gap-12 mb-10 max-w-[80%]">
           <div className="mt-10">
@@ -193,4 +193,12 @@ function MainPage() {
   );
 }
 
-export default MainPage;
+function SuspenseBoundary() {
+  return (
+    <Suspense fallback={<>placeholder</>}>
+      <MainPage />
+    </Suspense>
+  );
+}
+
+export default SuspenseBoundary;
