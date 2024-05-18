@@ -90,6 +90,20 @@ function MainPage() {
           </motion.div>
         )}
       </div>
+      <div className="bg-[#C3C6A1] w-full h-screen pt-20 mt-10">
+        <div className="font-Neela text-[#6D5C55] text-[80px] bg-[#C3C6A1] text-center">
+          Register your interest
+        </div>
+        <a href="https://forms.hackclub.com/t/dXZwSPpG1Sus">
+          <motion.img
+            whileHover={{ scale: 1.1 }}
+            src="/ticket.png"
+            alt="ticket"
+            draggable="false"
+            className="mx-auto mt-20"
+          />
+        </a>
+      </div>
       <div key="page-3" className="pt-10 flex items-center justify-between min-h-screen flex-col">
         <img src="/poster2.svg" className="max-w-[80%]" />
 
@@ -114,20 +128,6 @@ function MainPage() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="bg-[#C3C6A1] w-full h-screen pt-20 mt-10">
-        <div className="font-Neela text-[#6D5C55] text-[80px] bg-[#C3C6A1] text-center">
-          Register your interest
-        </div>
-        <a href="https://forms.hackclub.com/t/dXZwSPpG1Sus">
-          <motion.img
-            whileHover={{ scale: 1.1 }}
-            src="/ticket.png"
-            alt="ticket"
-            draggable="false"
-            className="mx-auto mt-20"
-          />
-        </a>
       </div>
       <div className="bg-[#AAAD83] py-5 px-20">
         <div className="max-w-[80%] mx-auto">
