@@ -1,8 +1,9 @@
 "use client";
 
+import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import Faq from "./components/Faq";
 
 export default function Home() {
   const [page, setPage] = useState(-1);
@@ -15,7 +16,8 @@ export default function Home() {
   const [firstAudioEnded, setFirstAudioEnded] = useState(false);
   const [secondAudioEnded, setSecondAudioEnded] = useState(false);
   const [bgAudio, setBgAudio] = useState<HTMLAudioElement | null>(null);
-  const [allAboard, setAllAboard] = useState(false);
+
+  const router = useRouter();
 
   useEffect(() => {
     setPage(0);
@@ -162,200 +164,72 @@ export default function Home() {
     }
   }, [page]);
 
-  useEffect(() => {
-    if (page === 4) {
-      const audio = new Audio("/audio/All Aboard.mp3");
-      audio.volume = 0.1;
-
-      setTimeout(() => {
-        audio.play().catch((error) => {
-          console.error("audio wehh", error);
-        });
-      }, 2000);
-
-      setTimeout(() => {
-        setAllAboard(true);
-      }, 2000);
-
-      return () => {
-        audio.pause();
-        audio.currentTime = 0;
-      };
-    }
-  }, [page]);
-
   return (
     <>
-    <div className="flex items-center justify-center h-screen sm:hidden">
-      <div className="text-center py-5 border-2 border-black pl-20 pr-20">
-        Rotate your device<br></br>to landscape
+      <div className="flex items-center justify-center h-screen sm:hidden">
+        <div className="text-center py-5 border-2 border-black pl-20 pr-20">
+          Rotate your device<br></br>to landscape
+        </div>
       </div>
-    </div>
-    <main className="hidden sm:block">
-      <AnimatePresence>
-        {page === 0 && (
-          <div key="page-0" className="bg-[#76728B] h-screen">
-            <div className="flex justify-center items-center h-screen">
-              <motion.div
-                whileHover={{ scale: 1.1 }}
-                className="text-center font-extrabold text-[40px] bg-[#f1eddd] rounded-full w-[700px] h-[700px] flex justify-center items-center cursor-pointer"
-                onClick={handleEnterClick}
-              >
-                ENTER HERE
-              </motion.div>
-            </div>
-          </div>
-        )}
-      </AnimatePresence>
-
-      <AnimatePresence>
-        {page === 1 && (
-          <motion.div key="page-1" className="p-10">
-            {MainBox && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1 }}
-                className="border-2 rounded-[5px] border-[#6D5C55] text-left sm:text-[16px] text-[10px] sm:px-10 sm:py-4  py-4 px-1 absolute z-10 bg-[#F1EDDD] sm:bottom-[20rem]  bottom-[40rem] sm:right-[10rem] right-[0.8rem]"
-              >
-                As the dawn of the full moon rises, our<br></br> journey will
-                begin...
-              </motion.div>
-            )}
-            <motion.div>
-              <div className="relative sm:w-full sm:h-[90vh]">
-                <img
-                  src="/main-art.png"
-                  alt="Main Art"
-                  className="sm:absolute sm:top-[-3rem] sm:left-0 w-full h-full object-cover"
-                />
-              </div>
-              <div className="relative bottom-[10rem] m-auto text-center font-Neela text-[#626543] text-[55px]">
-                WELCOME, VOYAGER
-              </div>
-            </motion.div>
-            {buttonVisible && (
-              <motion.button
-                onClick={() => setPage(2)}
-                className="relative bottom-[9rem] bg-[#76728B] mt-2 py-2 px-10 text-[#F1EDDD] text-3xl border-[3px] border-[#6D5C55] block m-auto"
-                style={{
-                  boxShadow: "#F1EDDD 0px 0px 0px 2px, #6D5C55 0px 0px 0px 4px",
-                  WebkitTextStroke: "0.4px #320C0C",
-                }}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1 }}
-                whileHover={{
-                  scale: 1.1,
-                  transition: { duration: 0.125, ease: [0.42, 0, 0.58, 1] },
-                }}
-              >
-                NEXT
-              </motion.button>
-            )}
-          </motion.div>
-        )}
-      </AnimatePresence>
-      <AnimatePresence>
-        {page === 2 && (
-          <motion.div
-            key="page-2"
-            className="pt-10 flex items-center justify-between min-h-screen flex-col"
-            initial={{ y: -1000, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 1000, transition: { ease: "backIn", duration: 0.7 } }}
-            transition={{ duration: 1, ease: "backInOut", delay: 0.5 }}
-          >
-            <div className="flex-1 flex items-center justify-center">
-              <img
-                src="/art-4.png"
-                alt="Art 2"
-                className="sm:max-w-xl max-w-[350px]"
-              />
-              {textVisible && (
+      <main className="hidden sm:block">
+        <AnimatePresence>
+          {page === 0 && (
+            <div key="page-0" className="bg-[#76728B] h-screen p-20">
+              <div className="flex justify-center items-center h-[80vh]">
                 <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 1 }}
-                  className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:px-6 py-5 px-2 absolute sm:text-[16px] text-[10px] bg-[#F1EDDD] sm:bottom-[22rem] bottom-[26rem]"
+                  whileHover={{ scale: 1.1 }}
+                  className="text-center font-extrabold text-[40px] bg-[#f1eddd] rounded-full w-[500px] h-[500px] flex justify-center items-center cursor-pointer"
+                  onClick={handleEnterClick}
                 >
-                  In the beginning, we’ll scale a great cascade. How long will
-                  we<br></br> travel, clinging to the edges of these great
-                  mountains?
+                  ENTER HERE
                 </motion.div>
-              )}
-            </div>
-
-            <AnimatePresence>
-              {buttonVisible2 && (
-                <motion.button
-                  onClick={() => setPage(3)}
-                  className="bg-[#76728B] mt-5 py-2 px-10 text-[#F1EDDD] text-3xl border-[3px] border-[#6D5C55] block m-auto absolute bottom-[15rem]"
-                  style={{
-                    boxShadow:
-                      "#F1EDDD 0px 0px 0px 2px, #6D5C55 0px 0px 0px 4px",
-                    WebkitTextStroke: "0.4px #320C0C",
-                  }}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 1 }}
-                  whileHover={{
-                    scale: 1.1,
-                    transition: { duration: 0.125, ease: [0.42, 0, 0.58, 1] },
-                  }}
-                >
-                  NEXT
-                </motion.button>
-              )}
-            </AnimatePresence>
-            <div className="w-px h-48 bg-[#6D5C55] mx-10 mt-20" />
-          </motion.div>
-        )}
-
-        {page === 3 && (
-          <motion.div
-            key="page-3"
-            className="pt-10 flex items-center justify-between min-h-screen flex-col"
-            initial={{ y: -1000, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 1000, transition: { ease: "backIn", duration: 0.7 } }}
-            transition={{ duration: 1, ease: "backInOut", delay: 0.5 }}
-          >
-            {firstAudioEnded && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1 }}
-                className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:text-[16px] text-[10px] sm:px-5 sm:py-4  py-4 px-1 absolute bg-[#F1EDDD] sm:bottom-[42rem]  bottom-[40rem] sm:right-[20rem] right-[0.8rem]"
-              >
-                As the sun peaks above the horizon, casting a golden glow over
-                the<br></br> valley. What vibrant colors will you see as the
-                light leaks across the<br></br> plains.
-              </motion.div>
-            )}
-
-            <div className="flex-1 flex items-center justify-center">
-              <img
-                src="/manga2.svg"
-                alt="Art 3"
-                className="sm:max-w-xl max-w-[350px]"
-              />
-              {secondAudioEnded && (
-                <div className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:text-[16px] text-[10px] sm:px-10 sm:py-4  py-4 px-1 absolute bg-[#F1EDDD] sm:bottom-[23rem] bottom-[27rem]  ">
-                  distant whistle echoed through the air, heralding<br></br> the
-                  arrival of a cross-country odyssey
+              </div>
+              <div className="flex items-center justify-between w-full text-[#f1eddd] gap-5 text-xl">
+                <p className="w-[68%]">
+                  Artwork by Zoya (16, Texas), and website by Faisal (18, Vermont) and Ivoine (19,
+                  Bahamas) Voice by Deryn Oliver (As seen in Harry Potter and the Chamber of
+                  Secrets)
+                </p>
+                <div className="flex items-center gap-4">
+                  <Image src="/audio.svg" width={72} height={72} alt="audio" />
+                  <p className="block">Best Experienced with Audio</p>
                 </div>
-              )}
+              </div>
             </div>
+          )}
+        </AnimatePresence>
 
-            <AnimatePresence>
-              {buttonVisible3 && (
+        <AnimatePresence>
+          {page === 1 && (
+            <motion.div key="page-1" className="p-10">
+              {MainBox && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1 }}
+                  className="border-2 rounded-[5px] border-[#6D5C55] text-left sm:text-[16px] text-[10px] sm:px-10 sm:py-4  py-4 px-1 absolute z-10 bg-[#F1EDDD] sm:bottom-[20rem]  bottom-[40rem] sm:right-[10rem] right-[0.8rem]"
+                >
+                  As the dawn of the full moon rises, our<br></br> journey will begin...
+                </motion.div>
+              )}
+              <motion.div>
+                <div className="relative sm:w-full sm:h-[90vh]">
+                  <img
+                    src="/main-art.png"
+                    alt="Main Art"
+                    className="sm:absolute sm:top-[-3rem] sm:left-0 w-full h-full object-cover"
+                  />
+                </div>
+                <div className="relative bottom-[10rem] m-auto text-center font-Neela text-[#626543] text-[55px]">
+                  WELCOME, VOYAGER
+                </div>
+              </motion.div>
+              {buttonVisible && (
                 <motion.button
-                  onClick={() => setPage(4)}
-                  className="bg-[#76728B] mt-5 py-2 px-10 text-[#F1EDDD] text-3xl border-[3px] border-[#6D5C55] block m-auto absolute bottom-[15rem]"
+                  onClick={() => setPage(2)}
+                  className="relative bottom-[9rem] bg-[#76728B] mt-2 py-2 px-10 text-[#F1EDDD] text-3xl border-[3px] border-[#6D5C55] block m-auto"
                   style={{
-                    boxShadow:
-                      "#F1EDDD 0px 0px 0px 2px, #6D5C55 0px 0px 0px 4px",
+                    boxShadow: "#F1EDDD 0px 0px 0px 2px, #6D5C55 0px 0px 0px 4px",
                     WebkitTextStroke: "0.4px #320C0C",
                   }}
                   initial={{ opacity: 0 }}
@@ -369,151 +243,129 @@ export default function Home() {
                   NEXT
                 </motion.button>
               )}
-            </AnimatePresence>
-
-            <div className="w-px h-48 bg-[#6D5C55] mx-10 mt-20" />
-          </motion.div>
-        )}
-
-        {page === 4 && (
-          <>
-            <img src="/flag.svg" className="absolute" />
-            <img
-              src="/train.png"
-              className="w-full h-screen"
-              draggable="false"
-            />
-
-            <div key="page-4">
-              {allAboard && (
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 1 }}
-                >
-                  <img
-                    src="/Boreal.svg"
-                    draggable="false"
-                    className="absolute left-1/2 top-[20rem] transform -translate-x-1/2 -translate-y-1/2"
-                  />
-
-                  <div className="font-Neela text-[42px] text-[#76728B] text-center absolute bottom-12 left-1/2 transform -translate-x-1/2 w-full stroke">
-                    HACK CLUB’S CROSS-COUNTRY ODYSSEY <br />
-                    JULY 21-28 • VANCOUVER - MONTREAL
-                  </div>
-                </motion.div>
-              )}
-            </div>
-            <div
-              key="page-3"
+            </motion.div>
+          )}
+        </AnimatePresence>
+        <AnimatePresence>
+          {page === 2 && (
+            <motion.div
+              key="page-2"
               className="pt-10 flex items-center justify-between min-h-screen flex-col"
+              initial={{ y: -1000, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 1000, transition: { ease: "backIn", duration: 0.7 } }}
+              transition={{ duration: 1, ease: "backInOut", delay: 0.5 }}
             >
               <div className="flex-1 flex items-center justify-center">
-                <img
-                  src="/poster2.svg"
-                  alt="welcome"
-                  className="sm:w-[1100px] w-[300px]"
-                />
-              </div>
-              <div className="bg-[#C3C6A1] w-full h-screen pt-20 mt-10">
-                <div className="font-Neela text-[#6D5C55] text-[80px] bg-[#C3C6A1] text-center">
-                  Register your interest
-                </div>
-                <a href="https://forms.hackclub.com/t/dXZwSPpG1Sus">
-                  <img
-                    src="/ticket.png"
-                    alt="ticket"
-                    draggable="false"
-                    className="absolute left-1/2 top-[175rem] transform -translate-x-1/2 -translate-y-1/2"
-                  />
-                </a>
-              </div>
-              <div className="sm:flex space-y-10 gap-12 mb-10">
-                <div className="mt-10">
-                  <div className="font-Neela sm:text-[55px] brown-stroke text-[#76728B]">
-                    What will You do<br></br>with your time?
-                  </div>
-                  <div className="text-[26px] font-bold">
-                    7 Nights • 8 Days • 50 Hackers
-                  </div>
-
-                  <div className="mt-8">
-                    <img src="/route2.svg" draggable="false" />
-                  </div>
-                </div>
-                <div className="space-y-10">
-                  <div>
-                    <img src="/z1.svg" />
-                  </div>
-
-                  <div>
-                    <img src="/z2.svg" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="bg-[#AAAD83] py-5">
-              <div className="mt-10 px-20">
-                <div className="font-Neela text-[55px] brown-stroke text-[#76728B]">
-                  Experiences that linger<br></br>Often Forever...
-                </div>
-                <div className="text-[26px]">
-                  A Glimpse of what your journey onboard The Boreal Express
-                  would look like
-                </div>
-              </div>
-              <div className="flex justify-center mt-8 gap-10">
-                <div>
-                  <img src="/rock.svg" />
-                  <div className="text-center pt-5 text-[20px] text-[#6D5C55] font-bold">
-                    The Canadian Rockies
-                  </div>
-                </div>
-
-                <div>
-                  <img src="/jasper.svg" />
-                  <div className="text-center pt-5 text-[20px] text-[#6D5C55] font-bold">
-                    Jasper, Alberta
-                  </div>
-                </div>
-
-                <div>
-                  <img src="/vancouver.svg" />
-                  <div className="text-center pt-5 text-[20px] text-[#6D5C55] font-bold">
-                    Vancuover, British Columbia
-                  </div>
-                </div>
+                <img src="/art-4.png" alt="Art 2" className="sm:max-w-xl max-w-[350px]" />
+                {textVisible && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1 }}
+                    className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:px-6 py-5 px-2 absolute sm:text-[16px] text-[10px] bg-[#F1EDDD] sm:bottom-[22rem] bottom-[26rem]"
+                  >
+                    In the beginning, we’ll scale a great cascade. How long will we<br></br> travel,
+                    clinging to the edges of these great mountains?
+                  </motion.div>
+                )}
               </div>
 
-              <div className="flex justify-center mt-20 gap-10 pb-[5rem]">
-                <div>
-                  <img src="/toronto.svg" />
-                  <div className="text-center pt-5 text-[20px] text-[#6D5C55] font-bold">
-                    Toronto, Ontario
-                  </div>
-                </div>
+              <AnimatePresence>
+                {buttonVisible2 && (
+                  <motion.button
+                    onClick={() => setPage(3)}
+                    className="bg-[#76728B] mt-5 py-2 px-10 text-[#F1EDDD] text-3xl border-[3px] border-[#6D5C55] block m-auto absolute bottom-[15rem]"
+                    style={{
+                      boxShadow: "#F1EDDD 0px 0px 0px 2px, #6D5C55 0px 0px 0px 4px",
+                      WebkitTextStroke: "0.4px #320C0C",
+                    }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1 }}
+                    whileHover={{
+                      scale: 1.1,
+                      transition: { duration: 0.125, ease: [0.42, 0, 0.58, 1] },
+                    }}
+                  >
+                    NEXT
+                  </motion.button>
+                )}
+              </AnimatePresence>
+              <div className="w-px h-48 bg-[#6D5C55] mx-10 mt-20" />
+            </motion.div>
+          )}
 
-                <div>
-                  <img src="/winnipeg.svg" />
-                  <div className="text-center pt-5 text-[20px] text-[#6D5C55] font-bold">
-                    Winnipeg, Manitoba
-                  </div>
-                </div>
+          {page === 3 && (
+            <motion.div
+              key="page-3"
+              className="pt-10 flex items-center justify-between min-h-screen flex-col"
+              initial={{ y: -1000, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 1000, transition: { ease: "backIn", duration: 0.7 } }}
+              transition={{ duration: 1, ease: "backInOut", delay: 0.5 }}
+            >
+              {firstAudioEnded && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1 }}
+                  className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:text-[16px] text-[10px] sm:px-5 sm:py-4  py-4 px-1 absolute bg-[#F1EDDD] sm:bottom-[42rem]  bottom-[40rem] sm:right-[20rem] right-[0.8rem]"
+                >
+                  As the sun peaks above the horizon, casting a golden glow over the<br></br>{" "}
+                  valley. What vibrant colors will you see as the light leaks across the<br></br>{" "}
+                  plains.
+                </motion.div>
+              )}
 
-                <div>
-                  <img src="/rooms.svg" />
-                  <div className="text-center pt-5 text-[20px] text-[#6D5C55] font-bold">
-                    Rooms on board the Sleeper Car
+              <div className="flex-1 flex items-center justify-center">
+                <img src="/manga2.svg" alt="Art 3" className="sm:max-w-xl max-w-[350px]" />
+                {secondAudioEnded && (
+                  <div className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:text-[16px] text-[10px] sm:px-10 sm:py-4  py-4 px-1 absolute bg-[#F1EDDD] sm:bottom-[23rem] bottom-[27rem]  ">
+                    distant whistle echoed through the air, heralding<br></br> the arrival of a
+                    cross-country odyssey
                   </div>
-                </div>
+                )}
               </div>
-            </div>
 
-            <Faq />
-          </>
-        )}
-      </AnimatePresence>
-    </main>
+              <AnimatePresence>
+                {buttonVisible3 && (
+                  <motion.button
+                    onClick={() => {
+                      router.push("/main?continue=true");
+
+                      const audio = new Audio("/audio/All Aboard.mp3");
+                      audio.volume = 0.1;
+
+                      setTimeout(() => {
+                        audio.play().catch((error) => {
+                          console.error("audio wehh", error);
+                        });
+                      }, 2000);
+                    }}
+                    className="bg-[#76728B] mt-5 py-2 px-10 text-[#F1EDDD] text-3xl border-[3px] border-[#6D5C55] block m-auto absolute bottom-[15rem]"
+                    style={{
+                      boxShadow: "#F1EDDD 0px 0px 0px 2px, #6D5C55 0px 0px 0px 4px",
+                      WebkitTextStroke: "0.4px #320C0C",
+                    }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1 }}
+                    whileHover={{
+                      scale: 1.1,
+                      transition: { duration: 0.125, ease: [0.42, 0, 0.58, 1] },
+                    }}
+                  >
+                    NEXT
+                  </motion.button>
+                )}
+              </AnimatePresence>
+
+              <div className="w-px h-48 bg-[#6D5C55] mx-10 mt-20" />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </main>
     </>
   );
 }
