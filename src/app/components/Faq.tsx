@@ -8,7 +8,7 @@ const Faq = () => {
         <div className="mt-10">
           <div className="flex flex-wrap justify-center gap-8">
             <div className="bg-[#D9D9D9] py-5 px-10 rounded-[5px] flex-1 max-w-xl shadow-lg">
-              <div className="font-bold text-[20px]">Who is can board the train?</div>
+              <div className="font-bold text-[20px]">Who can board the train?</div>
               <div className="text-[20px] mt-2">
                 All members of the <a href="https://hackclub.com/slack" className="underline" target="_blank">Hack Club Slack</a> who are under the age of 19 by the boarding date. Limited tickets are available, though.
               </div>
