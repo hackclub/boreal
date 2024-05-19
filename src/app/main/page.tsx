@@ -49,25 +49,26 @@ function MainPage() {
 
   return (
     <>
-      <img src="/train.png" className="w-full h-screen" draggable="false" />
-
       <div key="page-4">
+        <div>
+          <img src="/train.png" className="w-[80%] my-10 mx-auto block" draggable="false" />
+        </div>
         {allAboard && (
           <motion.div
+            className="lg:-translate-y-20 md:-translate-y-16 sm:-translate-y-14 -translate-y-12"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            <img
-              src="/Boreal.svg"
-              draggable="false"
-              className="absolute left-1/2 top-[20rem] transform -translate-x-1/2 -translate-y-1/2"
-            />
-
-            <div className="font-Neela text-[42px] text-[#76728B] text-center absolute bottom-12 left-1/2 transform -translate-x-1/2 w-full stroke">
-              HACK CLUB’S CROSS-COUNTRY HACKATHON <br />
+            <h1 className="text-[#626543] stroke lg:text-5xl font-Neela text-center md:text-3xl sm:text-xl">
+              THE BOREAL EXPRESS
+            </h1>
+            <p className="text-[#626543] stroke lg:text-3xl font-Neela text-center md:text-xl sm:text-lg">
+              HACK CLUB’S CROSS-COUNTRY HACKATHON
+            </p>
+            <p className="text-[#626543] stroke lg:text-2xl font-Neela text-center md:text-lg sm:text-base">
               JULY 21-28 • VANCOUVER - MONTREAL
-            </div>
+            </p>
           </motion.div>
         )}
       </div>
