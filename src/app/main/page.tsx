@@ -168,7 +168,7 @@ function MainPage() {
           <div className="max-w-[80%] mx-auto">
             <div className="mt-10">
               <div className="font-Neela text-[55px] brown-stroke text-[#6D5C55]">
-                Experiences that linger<br></br>often forever...
+                Experiences that linger,<br></br>often forever...
               </div>
               <div className="text-[26px] text-[#6D5C55] font-medium">
                 A glimpse of what your journey onboard The Boreal Express would look like
