@@ -165,6 +165,7 @@ export default function Home() {
 
   return (
     <>
+      <img src="/flag.svg" className="absolute left-10" />
       <div className="flex items-center justify-center h-screen sm:hidden">
         <div className="text-center py-5 border-2 border-black pl-20 pr-20">
           Rotate your device<br></br>to landscape

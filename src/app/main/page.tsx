@@ -49,7 +49,6 @@ function MainPage() {
 
   return (
     <>
-      <img src="/flag.svg" className="absolute" />
       <img src="/train.png" className="w-full h-screen" draggable="false" />
 
       <div key="page-4">
