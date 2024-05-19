@@ -4,8 +4,8 @@ import React, { Suspense, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Faq from "../components/Faq";
 import { useSearchParams } from "next/navigation";
-import Image from "next/image";
 import Footer from "../components/Footer";
+import Credits from "../components/Credits";
 
 function MainPage() {
   const [allAboard, setAllAboard] = useState(false);
@@ -23,45 +23,27 @@ function MainPage() {
 
   if (!continued && !clicked) {
     return (
-      <div key="page-0" className="bg-[#76728B] h-screen p-20">
-        <div className="flex justify-center items-center h-[80vh]">
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            className="text-center font-extrabold text-[40px] bg-[#f1eddd] rounded-full w-[500px] h-[500px] flex justify-center items-center cursor-pointer"
-            onClick={() => {
-              setClicked(true);
-              const audio = new Audio("/bg.m4a");
-              audio.loop = true;
-              audio.volume = 0.05;
+      <Credits
+        onClick={() => {
+          setClicked(true);
+          const audio = new Audio("/bg.m4a");
+          audio.loop = true;
+          audio.volume = 0.05;
 
-              audio.play().catch((error) => {
-                console.error("audio bleh", error);
-              });
+          audio.play().catch((error) => {
+            console.error("audio bleh", error);
+          });
 
-              const narration = new Audio("/audio/All Aboard.mp3");
-              narration.volume = 0.1;
+          const narration = new Audio("/audio/All Aboard.mp3");
+          narration.volume = 0.1;
 
-              setTimeout(() => {
-                narration.play().catch((error) => {
-                  console.error("audio wehh", error);
-                });
-              }, 2000);
-            }}
-          >
-            ENTER HERE
-          </motion.div>
-        </div>
-        <div className="flex items-center justify-between w-full text-[#f1eddd] gap-5 text-xl">
-          <p className="w-[68%]">
-            Artwork by Zoya (16, Texas), and website by Faisal (18, Vermont) and Ivoine (19,
-            Bahamas) Voice by Deryn Oliver (As seen in Harry Potter and the Chamber of Secrets)
-          </p>
-          <div className="flex items-center gap-4">
-            <Image src="/audio.svg" width={72} height={72} alt="audio" />
-            <p className="block">Best Experienced with Audio</p>
-          </div>
-        </div>
-      </div>
+          setTimeout(() => {
+            narration.play().catch((error) => {
+              console.error("audio wehh", error);
+            });
+          }, 2000);
+        }}
+      />
     );
   }
 
@@ -90,6 +72,9 @@ function MainPage() {
           </motion.div>
         )}
       </div>
+      <div className="w-full py-20">
+        <img src="/poster2.svg" className="block mx-auto max-w-[80%]" />
+      </div>
       <div className="bg-[#C3C6A1] w-full h-screen pt-20 mt-10">
         <div className="font-Neela text-[#6D5C55] text-[80px] bg-[#C3C6A1] text-center">
           Register your interest
@@ -105,8 +90,6 @@ function MainPage() {
         </a>
       </div>
       <div key="page-3" className="pt-10 flex items-center justify-between min-h-screen flex-col">
-        <img src="/poster2.svg" className="max-w-[80%]" />
-
         <div className="sm:flex space-y-10 gap-12 mb-10 max-w-[80%]">
           <div className="mt-10">
             <div className="font-Neela sm:text-[55px] brown-stroke text-[#626543]">

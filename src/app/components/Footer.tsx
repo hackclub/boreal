@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="bg-[#C3C6A1] py-10 px-20">
+    <div className="bg-[#C3C6A1] py-6 px-12">
       <p>Built with ❤️ by teenagers, for teenagers @ Hack Club</p>
       <div className="flex items-center gap-2">
         <a href="https://hackclub.com">Home</a>

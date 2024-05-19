@@ -1,13 +1,12 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import Credits from "./components/Credits";
 
 export default function Home() {
   const [page, setPage] = useState(-1);
-  const [buttonOpacity, setButtonOpacity] = useState(0);
   const [buttonVisible, setButtonVisible] = useState(false);
   const [buttonVisible2, setButtonVisible2] = useState(false);
   const [buttonVisible3, setButtonVisible3] = useState(false);
@@ -62,7 +61,7 @@ export default function Home() {
           mainAudio.play().catch((error) => {
             console.error("audio crying", error);
           });
-        }, 5000);
+        }, 2500);
       };
 
       const handleMainUserInteraction = () => {
@@ -172,32 +171,7 @@ export default function Home() {
         </div>
       </div>
       <main className="hidden sm:block">
-        <AnimatePresence>
-          {page === 0 && (
-            <div key="page-0" className="bg-[#76728B] h-screen p-20">
-              <div className="flex justify-center items-center h-[80vh]">
-                <motion.div
-                  whileHover={{ scale: 1.1 }}
-                  className="text-center font-extrabold text-[40px] bg-[#f1eddd] rounded-full w-[500px] h-[500px] flex justify-center items-center cursor-pointer"
-                  onClick={handleEnterClick}
-                >
-                  ENTER HERE
-                </motion.div>
-              </div>
-              <div className="flex items-center justify-between w-full text-[#f1eddd] gap-5 text-xl">
-                <p className="w-[68%]">
-                  Artwork by Zoya (16, Texas), and website by Faisal (18, Vermont) and Ivoine (19,
-                  Bahamas) Voice by Deryn Oliver (As seen in Harry Potter and the Chamber of
-                  Secrets)
-                </p>
-                <div className="flex items-center gap-4">
-                  <Image src="/audio.svg" width={72} height={72} alt="audio" />
-                  <p className="block">Best Experienced with Audio</p>
-                </div>
-              </div>
-            </div>
-          )}
-        </AnimatePresence>
+        <AnimatePresence>{page === 0 && <Credits onClick={handleEnterClick} />}</AnimatePresence>
 
         <AnimatePresence>
           {page === 1 && (
