@@ -192,12 +192,12 @@ function MainPage() {
               <div className="flex-1 flex flex-col">
                 <img src="/vancouver.png" className="rounded-xl flex-1" />
                 <div className="text-center pt-5 text-[20px] text-[#6D5C55] font-medium">
-                  Vancouver, BC
+                  Vancouver, British Columbia
                 </div>
               </div>
             </div>
 
-            <div className="flex justify-center mt-20 gap-10 pb-[5rem]">
+            <div className="flex justify-center mt-8 gap-10 pb-[5rem]">
               <div className="flex-1 flex flex-col">
                 <img src="/toronto.svg" className="rounded-xl flex-1" />
                 <div className="text-center pt-5 text-[20px] text-[#6D5C55] font-medium">
