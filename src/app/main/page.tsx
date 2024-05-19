@@ -140,28 +140,28 @@ function MainPage() {
           </a>
         </div>
         <div key="page-3" className="pt-10 flex items-center justify-between min-h-screen flex-col">
-          <div className="sm:flex space-y-10 gap-12 mb-10 max-w-[80%]">
-            <div className="mt-10">
-              <div className="font-Neela sm:text-[55px] brown-stroke text-[#626543]">
+          <div className="sm:flex space-y-10 gap-12 mb-4 max-w-[80%]">
+            <div className="mt-10" style={{minWidth: 'calc(50% - 1.5rem)'}}>
+              <div className="font-Neela text-[26px] mt-4 font-bold">Ask yourself:</div>
+              <div className="font-Neela sm:text-[55px] brown-stroke text-[#626543]" >
                 What will you do
                 <br />
                 with your time?
               </div>
-              <div className="text-[26px] font-bold">7 Nights • 8 Days • 50 Hackers</div>
-
-              <div className="mt-8">
-                <img src="/route2.svg" draggable="false" />
-              </div>
+              <div className="text-[26px] mt-4 font-bold">7 Nights • 8 Days • 50 Hackers</div>
             </div>
             <div className="space-y-10">
               <div>
                 <img src="/z1.svg" />
               </div>
-
-              <div>
-                <img src="/z2.svg" />
-              </div>
             </div>
+          </div>
+          <div className="sm:flex space-y-10 gap-12 mb-10 max-w-[80%]">
+            <img src="/z1.svg" style={{width: 'calc(50% - 1.5rem)', objectFit: 'cover', borderRadius: '16px'}} />
+            <img src="/z2.svg" style={{width: 'calc(50% - 1.5rem)'}} />
+          </div>
+          <div className="mt-12 mb-24">
+            <img src="/route3.svg" draggable="false" />
           </div>
         </div>
         <div className="bg-[#AAAD83] py-5 px-20">
