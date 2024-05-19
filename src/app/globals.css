@@ -12,17 +12,16 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-
 @font-face {
-  font-family: 'Neela';
-  src: url('/Neela-Demo-Regular.otf') format('opentype');
+  font-family: "Neela";
+  src: url("/Neela-Demo-Regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
-
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {
@@ -38,13 +37,36 @@ html {
   scroll-behavior: smooth;
 }
 
-
 .stroke {
   -webkit-text-stroke: 1px black;
 }
 
 .brown-stroke {
-  -webkit-text-stroke: 1px #320C0C;
+  -webkit-text-stroke: 1px #320c0c;
 }
 
+.grain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  z-index: 300;
+  transform: translateZ(0);
+}
 
+.grain:before {
+  content: "";
+  top: -10rem;
+  left: -10rem;
+  width: calc(100% + 20rem);
+  height: calc(100% + 20rem);
+  z-index: 9999;
+  position: fixed;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/5c/Image_gaussian_noise_example.png);
+  opacity: 0.15;
+  pointer-events: none;
+  -webkit-animation: noise 1s steps(2) infinite;
+  animation: noise 1s steps(2) infinite;
+}
