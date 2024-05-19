@@ -1,11 +1,10 @@
 const Faq = () => {
   return (
-    <div className="mt-10">
+    <div className="mt-10 mb-16">
       <div className="max-w-[80%] mx-auto">
-        <div className="font-Neela text-[55px] text-[#626543] brown-stroke text-left">
-          May we offer a little persuastion?
-        </div>
-
+          <h1 className="font-Neela text-[55px] text-[#626543] brown-stroke text-center">
+            May we offer a little persuastion?
+          </h1>
         <div className="mt-10">
           <div className="flex flex-wrap justify-center gap-8">
             <div className="bg-[#D9D9D9] py-5 px-10 rounded-[5px] flex-1 max-w-xl shadow-lg">

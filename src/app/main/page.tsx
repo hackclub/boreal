@@ -16,34 +16,37 @@ function MainPage() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setAllAboard(true);
-    }, 5000);
+    }, 4500);
 
     return () => clearTimeout(timeout);
   }, []);
 
   if (!continued && !clicked) {
     return (
-      <Credits
-        onClick={() => {
-          setClicked(true);
-          const audio = new Audio("/bg.m4a");
-          audio.loop = true;
-          audio.volume = 0.05;
+      <>
+        <img src="/flag.svg" className="absolute left-10" />
+        <Credits
+          onClick={() => {
+            setClicked(true);
+            const audio = new Audio("/bg.m4a");
+            audio.loop = true;
+            audio.volume = 0.05;
 
-          audio.play().catch((error) => {
-            console.error("audio bleh", error);
-          });
-
-          const narration = new Audio("/audio/All Aboard.mp3");
-          narration.volume = 0.1;
-
-          setTimeout(() => {
-            narration.play().catch((error) => {
-              console.error("audio wehh", error);
+            audio.play().catch((error) => {
+              console.error("audio bleh", error);
             });
-          }, 2000);
-        }}
-      />
+
+            const narration = new Audio("/audio/All Aboard.mp3");
+            narration.volume = 0.1;
+
+            setTimeout(() => {
+              narration.play().catch((error) => {
+                console.error("audio wehh", error);
+              });
+            }, 2000);
+          }}
+        />
+      </>
     );
   }
 
@@ -57,10 +60,10 @@ function MainPage() {
       </div>
       <main className="hidden sm:block">
         <div>
-          <img src="/train.png" className="w-[80%] my-10 mx-auto block" draggable="false" />
+          <img src="/train.png" className="max-h-[85vh] my-5 mx-auto block" draggable="false" />
           {allAboard && (
             <motion.div
-              className="lg:-translate-y-20 md:-translate-y-16 sm:-translate-y-14 -translate-y-12"
+              className="lg:-translate-y-16 md:-translate-y-14 sm:-translate-y-12 -translate-y-10"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
@@ -78,7 +81,7 @@ function MainPage() {
           )}
         </div>
 
-        <div className={`flex items-center justify-center ${allAboard ? "mt-0" : "mt-40"}`}>
+        <div className={`flex items-center justify-center ${allAboard ? "mt-20" : "mt-48"}`}>
           <div className="p-20 w-[60%] bg-[#D9D9D9] rounded-lg border-[3px] border-[#6D5C55] border-dashed">
             <h1 className="text-[#626543] stroke lg:text-3xl font-Neela md:text-3xl sm:text-xl mb-2">
               DEAR HACKER,
@@ -119,11 +122,6 @@ function MainPage() {
               This is your invitation to build the things you care about and see your actions change
               the world around you. Join us aboard The Boreal Express.
             </p>
-            <br />
-            <p>Warmly,</p>
-            <br />
-            <br />
-            <br />
           </div>
         </div>
 
