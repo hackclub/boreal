@@ -3,7 +3,7 @@ const Faq = () => {
     <div className="mt-10 mb-16">
       <div className="max-w-[80%] mx-auto">
           <h1 className="font-Neela text-[55px] text-[#626543] brown-stroke text-center">
-            May we offer a little persuastion?
+            May we offer a little persuasion?
           </h1>
         <div className="mt-10">
           <div className="flex flex-wrap justify-center gap-8">
