@@ -196,7 +196,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="relative bottom-[10rem] m-auto text-center font-Neela text-[#626543] text-[55px]">
-                  WELCOME, VOYAGER
+                  WELCOME, HACKER
                 </div>
               </motion.div>
               {buttonVisible && (
