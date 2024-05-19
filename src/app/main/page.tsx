@@ -113,7 +113,7 @@ function MainPage() {
             <br />
             <p>
               Together, we will travel through one of the most pristine remaining lands on earth,
-              only accessible by rail. Onboard the train, you would build projects alongside some of
+              only accessible by rail. Onboard the train, you will build projects alongside some of
               the most kickass engineers, artists, hackers, and scientists working on highly
               technical solutions to save the environment.
             </p>
