@@ -1,4 +1,5 @@
 import "./globals.css";
+// @ts-ignore
 import Meta from '@hackclub/meta'
 
 export default function RootLayout({
