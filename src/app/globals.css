@@ -7,16 +7,143 @@
   src: url("/public/Neela-Demo-Regular.otf") format("opentype");
 }
 
-body {
-  background-color: #f1eddd;
-  -webkit-font-smoothing: antialiased;
-}
-
 @font-face {
   font-family: "Neela";
   src: url("/Neela-Demo-Regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
+}
+
+@font-face {
+  font-family: "FixelText";
+  src: url("/FixelText-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "FixelText";
+  src: url("/FixelText-BlackItalic.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "FixelText";
+  src: url("/FixelText-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "FixelText";
+  src: url("/FixelText-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "FixelText";
+  src: url("/FixelText-ExtraBold.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "FixelText";
+  src: url("/FixelText-ExtraBoldItalic.otf") format("opentype");
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "FixelText";
+  src: url("/FixelText-ExtraLight.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "FixelText";
+  src: url("/FixelText-ExtraLightItalic.otf") format("opentype");
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "FixelText";
+  src: url("/FixelText-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "FixelText";
+  src: url("/FixelText-LightItalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "FixelText";
+  src: url("/FixelText-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "FixelText";
+  src: url("/FixelText-MediumItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "FixelText";
+  src: url("/FixelText-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "FixelText";
+  src: url("/FixelText-RegularItalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "FixelText";
+  src: url("/FixelText-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "FixelText";
+  src: url("/FixelText-SemiBoldItalic.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "FixelText";
+  src: url("/FixelText-Thin.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "FixelText";
+  src: url("/FixelText-ThinItalic.otf") format("opentype");
+  font-weight: 100;
+  font-style: italic;
+}
+
+body {
+  font-family: 'FixelText', sans-serif;
+  background-color: #f1eddd;
+  -webkit-font-smoothing: antialiased;
 }
 
 @keyframes pulse {

@@ -288,7 +288,7 @@ export default function Home() {
                   className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:text-[16px] text-[10px] sm:px-5 sm:py-4  py-4 px-1 absolute bg-[#F1EDDD] sm:bottom-[42rem]  bottom-[40rem] sm:right-[20rem] right-[0.8rem]"
                 >
                   As the sun peaks above the horizon, casting a golden glow over the<br></br>{" "}
-                  valley. What vibrant colors will you see as the light leaks across the<br></br>{" "}
+                  valley; what vibrant colors will you see as the light leaks across the<br></br>{" "}
                   plains.
                 </motion.div>
               )}
@@ -297,8 +297,8 @@ export default function Home() {
                 <img src="/manga2.svg" alt="Art 3" className="sm:max-w-xl max-w-[350px]" />
                 {secondAudioEnded && (
                   <div className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:text-[16px] text-[10px] sm:px-10 sm:py-4  py-4 px-1 absolute bg-[#F1EDDD] sm:bottom-[23rem] bottom-[27rem]  ">
-                    distant whistle echoed through the air, heralding<br></br> the arrival of a
-                    cross-country odyssey
+                    distant whistle echoed through the air, heralding<br></br> the arrival of a {" "}
+                    <i>cross-country odyssey.</i>
                   </div>
                 )}
               </div>

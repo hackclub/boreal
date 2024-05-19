@@ -56,7 +56,7 @@ function MainPage() {
         </div>
       </div>
       <main className="hidden sm:block">
-        <div className="min-h-screen">
+        <div>
           <img src="/train.png" className="w-[80%] my-10 mx-auto block" draggable="false" />
           {allAboard && (
             <motion.div
@@ -65,7 +65,7 @@ function MainPage() {
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
             >
-              <h1 className="text-[#626543] stroke lg:text-[44px] font-Neela text-center md:text-3xl sm:text-xl mb-2">
+              <h1 className="text-[#626543] stroke lg:text-[40px] font-Neela text-center md:text-3xl sm:text-xl mb-2">
                 THE BOREAL EXPRESS
               </h1>
               <p className="text-[#626543] stroke lg:text-3xl font-Neela text-center md:text-xl sm:text-lg mb-1">
@@ -78,7 +78,7 @@ function MainPage() {
           )}
         </div>
 
-        <div className="flex items-center justify-center">
+        <div className={`flex items-center justify-center ${allAboard ? "mt-0" : "mt-40"}`}>
           <div className="p-20 w-[60%] bg-[#D9D9D9] rounded-lg border-[3px] border-[#6D5C55] border-dashed">
             <h1 className="text-[#626543] stroke lg:text-3xl font-Neela md:text-3xl sm:text-xl mb-2">
               DEAR HACKER,
@@ -128,7 +128,7 @@ function MainPage() {
         </div>
 
         <div className="bg-[#C3C6A1] w-full py-20 mt-10">
-          <div className="font-Neela text-[#6D5C55] text-[80px] bg-[#C3C6A1] text-center">
+          <div className="font-Neela text-[#6D5C55] text-[80px] bg-[#C3C6A1] text-center stroke">
             Register your interest
           </div>
           <a href="https://forms.hackclub.com/t/dXZwSPpG1Sus">
@@ -172,28 +172,28 @@ function MainPage() {
               <div className="font-Neela text-[55px] brown-stroke text-[#6D5C55]">
                 Experiences that linger<br></br>often forever...
               </div>
-              <div className="text-[26px]">
+              <div className="text-[26px] text-[#6D5C55] font-medium">
                 A Glimpse of what your journey onboard The Boreal Express would look like
               </div>
             </div>
             <div className="flex justify-center items-stretch mt-8 gap-10">
               <div className="flex-1 flex flex-col">
                 <img src="/rock.svg" className="rounded-xl flex-1" />
-                <div className="text-center pt-5 text-[20px] text-[#6D5C55] font-bold">
+                <div className="text-center pt-5 text-[20px] text-[#6D5C55] font-medium">
                   The Canadian Rockies
                 </div>
               </div>
 
               <div className="flex-1 flex flex-col">
-                <img src="/jasper.webp" className="rounded-xl flex-1" />
-                <div className="text-center pt-5 text-[20px] text-[#6D5C55] font-bold">
+                <img src="/jasper.png" className="rounded-xl flex-1" />
+                <div className="text-center pt-5 text-[20px] text-[#6D5C55] font-medium">
                   Jasper, Alberta
                 </div>
               </div>
 
               <div className="flex-1 flex flex-col">
                 <img src="/vancouver.png" className="rounded-xl flex-1" />
-                <div className="text-center pt-5 text-[20px] text-[#6D5C55] font-bold">
+                <div className="text-center pt-5 text-[20px] text-[#6D5C55] font-medium">
                   Vancouver, BC
                 </div>
               </div>
@@ -202,21 +202,21 @@ function MainPage() {
             <div className="flex justify-center mt-20 gap-10 pb-[5rem]">
               <div className="flex-1 flex flex-col">
                 <img src="/toronto.svg" className="rounded-xl flex-1" />
-                <div className="text-center pt-5 text-[20px] text-[#6D5C55] font-bold">
+                <div className="text-center pt-5 text-[20px] text-[#6D5C55] font-medium">
                   Toronto, Ontario
                 </div>
               </div>
 
               <div className="flex-1 flex flex-col">
-                <img src="/winnipeg.svg" className="rounded-xl flex-1" />
-                <div className="text-center pt-5 text-[20px] text-[#6D5C55] font-bold">
+                <img src="/winnipeg.webp" className="rounded-xl flex-1" />
+                <div className="text-center pt-5 text-[20px] text-[#6D5C55] font-medium">
                   Winnipeg, Manitoba
                 </div>
               </div>
 
               <div className="flex-1 flex flex-col">
                 <img src="/rooms.png" className="rounded-xl flex-1" />
-                <div className="text-center pt-5 text-[20px] text-[#6D5C55] font-bold">
+                <div className="text-center pt-5 text-[20px] text-[#6D5C55] font-medium">
                   Sleeper Car
                 </div>
               </div>
