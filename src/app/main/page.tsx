@@ -171,7 +171,7 @@ function MainPage() {
                 Experiences that linger,<br></br>often forever...
               </div>
               <div className="text-[26px] text-[#6D5C55] font-medium">
-                A glimpse of what your journey onboard The Boreal Express would look like
+                A glimpse of what your journey onboard The Boreal Express will look like
               </div>
             </div>
             <div className="flex justify-center items-stretch mt-8 gap-10">
