@@ -125,8 +125,8 @@ function MainPage() {
           </div>
         </div>
 
-        <div className="bg-[#C3C6A1] w-full py-20 mt-10">
-          <div className="font-Neela text-[#6D5C55] text-[80px] bg-[#C3C6A1] text-center stroke">
+        <div className="bg-[#008c8c] w-full py-20 mt-10">
+          <div className="font-Neela text-white text-[80px] text-center font-bold drop-shadow-xl">
             Register your interest
           </div>
           <a href="https://forms.hackclub.com/t/dXZwSPpG1Sus">
@@ -135,7 +135,7 @@ function MainPage() {
               src="/ticket.png"
               alt="ticket"
               draggable="false"
-              className="mx-auto mt-20"
+              className="mx-auto mt-10"
             />
           </a>
         </div>
