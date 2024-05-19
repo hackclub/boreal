@@ -74,7 +74,7 @@ function MainPage() {
       <div className="w-full py-20">
         <img src="/poster2.svg" className="block mx-auto max-w-[80%]" />
       </div>
-      <div className="bg-[#C3C6A1] w-full h-screen pt-20 mt-10">
+      <div className="bg-[#C3C6A1] w-full py-20 mt-10">
         <div className="font-Neela text-[#6D5C55] text-[80px] bg-[#C3C6A1] text-center">
           Register your interest
         </div>
@@ -92,7 +92,9 @@ function MainPage() {
         <div className="sm:flex space-y-10 gap-12 mb-10 max-w-[80%]">
           <div className="mt-10">
             <div className="font-Neela sm:text-[55px] brown-stroke text-[#626543]">
-              What will You do<br></br>with your time?
+              What will you do
+              <br />
+              with your time?
             </div>
             <div className="text-[26px] font-bold">7 Nights • 8 Days • 50 Hackers</div>
 
@@ -115,22 +117,22 @@ function MainPage() {
         <div className="max-w-[80%] mx-auto">
           <div className="mt-10">
             <div className="font-Neela text-[55px] brown-stroke text-[#6D5C55]">
-              Experiences that linger<br></br>Often Forever...
+              Experiences that linger<br></br>often forever...
             </div>
             <div className="text-[26px]">
               A Glimpse of what your journey onboard The Boreal Express would look like
             </div>
           </div>
           <div className="flex justify-center items-stretch mt-8 gap-10">
-            <div className="flex-1">
-              <img src="/rock.svg" />
+            <div className="flex-1 flex flex-col">
+              <img src="/rock.svg" className="rounded-xl flex-1" />
               <div className="text-center pt-5 text-[20px] text-[#6D5C55] font-bold">
                 The Canadian Rockies
               </div>
             </div>
 
-            <div className="flex-1">
-              <img src="/jasper.png" className="rounded-xl" />
+            <div className="flex-1 flex flex-col">
+              <img src="/jasper.webp" className="rounded-xl flex-1" />
               <div className="text-center pt-5 text-[20px] text-[#6D5C55] font-bold">
                 Jasper, Alberta
               </div>
@@ -139,30 +141,30 @@ function MainPage() {
             <div className="flex-1 flex flex-col">
               <img src="/vancouver.png" className="rounded-xl flex-1" />
               <div className="text-center pt-5 text-[20px] text-[#6D5C55] font-bold">
-                Vancuover, British Columbia
+                Vancouver, BC
               </div>
             </div>
           </div>
 
           <div className="flex justify-center mt-20 gap-10 pb-[5rem]">
-            <div className="flex-1">
-              <img src="/toronto.svg" />
+            <div className="flex-1 flex flex-col">
+              <img src="/toronto.svg" className="rounded-xl flex-1" />
               <div className="text-center pt-5 text-[20px] text-[#6D5C55] font-bold">
                 Toronto, Ontario
               </div>
             </div>
 
-            <div className="flex-1">
-              <img src="/winnipeg.svg" />
+            <div className="flex-1 flex flex-col">
+              <img src="/winnipeg.svg" className="rounded-xl flex-1" />
               <div className="text-center pt-5 text-[20px] text-[#6D5C55] font-bold">
                 Winnipeg, Manitoba
               </div>
             </div>
 
-            <div className="flex-1">
-              <img src="/rooms.png" className="rounded-xl" />
+            <div className="flex-1 flex flex-col">
+              <img src="/rooms.png" className="rounded-xl flex-1" />
               <div className="text-center pt-5 text-[20px] text-[#6D5C55] font-bold">
-                Rooms on board the Sleeper Car
+                Sleeper Car
               </div>
             </div>
           </div>

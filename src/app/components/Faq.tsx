@@ -2,13 +2,13 @@ const Faq = () => {
   return (
     <div className="mt-10">
       <div className="max-w-[80%] mx-auto">
-        <div className="font-Neela text-[55px] text-[#626543] brown-stroke text-center">
+        <div className="font-Neela text-[55px] text-[#626543] brown-stroke text-left">
           May we offer a little Persuasion?
         </div>
 
         <div className="mt-10">
           <div className="flex flex-wrap justify-center gap-8">
-            <div className="bg-[#D9D9D9] py-5 px-10 rounded-[5px] flex-1 max-w-lg">
+            <div className="bg-[#D9D9D9] py-5 px-10 rounded-[5px] flex-1 max-w-xl">
               <div className="font-bold text-[20px]">Who is eligible to receive an invitation?</div>
               <div className="text-[20px] mt-2">
                 All members of the Hack Club Slack who are under the age of 19 by the boarding date
@@ -16,7 +16,7 @@ const Faq = () => {
               </div>
             </div>
 
-            <div className="bg-[#D9D9D9] py-5 px-10 rounded-[5px] flex-1 max-w-lg">
+            <div className="bg-[#D9D9D9] py-5 px-10 rounded-[5px] flex-1 max-w-xl">
               <div className="font-bold text-[20px]">
                 Will travel to Vancouver and from Montreal be Covered?
               </div>
@@ -28,7 +28,7 @@ const Faq = () => {
           </div>
 
           <div className="flex flex-wrap justify-center gap-8 mt-8 mb-10">
-            <div className="bg-[#D9D9D9] py-5 px-10 rounded-[5px] flex-1 max-w-lg">
+            <div className="bg-[#D9D9D9] py-5 px-10 rounded-[5px] flex-1 max-w-xl">
               <div className="font-bold text-[20px]">
                 Will housing, meals, and transport be provided?
               </div>
@@ -38,7 +38,7 @@ const Faq = () => {
               </div>
             </div>
 
-            <div className="bg-[#D9D9D9] py-5 px-10 rounded-[5px] flex-1 max-w-lg">
+            <div className="bg-[#D9D9D9] py-5 px-10 rounded-[5px] flex-1 max-w-xl">
               <div className="font-bold text-[20px]">
                 My parents have concerns, what<br></br>should I do?
               </div>
