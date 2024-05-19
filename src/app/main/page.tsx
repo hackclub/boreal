@@ -81,8 +81,8 @@ function MainPage() {
           )}
         </div>
 
-        <div className={`flex items-center justify-center ${allAboard ? "mt-20" : "mt-48"}`}>
-          <div className="p-20 w-[60%] bg-[#D9D9D9] rounded-lg border-[3px] border-[#6D5C55] border-dashed">
+        <div className={`flex items-center justify-center mb-32 ${allAboard ? "mt-20" : "mt-48"}`}>
+          <div className="p-20 w-[60%] bg-[#D9D9D9] rounded-lg border-[3px] border-[#6D5C55] border-dashed" style={{ fontSize: '18px' }}>
             <h1 className="text-[#626543] stroke lg:text-3xl font-Neela md:text-3xl sm:text-xl mb-2">
               DEAR HACKER,
             </h1>
@@ -96,7 +96,7 @@ function MainPage() {
             </p>
             <br />
             <p className="font-bold text-justify">
-              This year, join us on our next great voyage: A Transcontinental Hackathon across
+              Join us on our next great voyage: A Transcontinental Hackathon across
               Canada.
             </p>
             <br />
