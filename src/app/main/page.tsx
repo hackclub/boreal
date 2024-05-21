@@ -25,6 +25,7 @@ function MainPage() {
     return (
       <>
         <img src="/flag.svg" className="absolute left-10" />
+        <a href="boreal.hackclub.com/main?continue=true>Skip</a>
         <Credits
           onClick={() => {
             setClicked(true);
