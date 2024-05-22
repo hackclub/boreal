@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="flex items-center gap-2 justify-center">
         <a href="https://hackclub.com" className="underline">Hack&nbsp;Club</a>
         <div className="w-[2px] h-3 bg-[#6D5C55]/40" />
-        <a href="https://hackclub.com/slack?event=The%20Boreal%20Express" className="underline">Slack</a>
+        <a href="https://hackclub.com/slack" className="underline">Slack</a>
         <div className="w-[2px] h-3 bg-[#6D5C55]/40" />
         <a href="https://www.youtube.com/@HackClubHQ" className="underline">YouTube</a>
         <div className="w-[2px] h-3 bg-[#6D5C55]/40" />
