@@ -165,59 +165,47 @@ export default function Home() {
 
   return (
     <>
-      <img src="/flag.svg" className="absolute left-10" />
-      <div className="flex items-center justify-center h-screen sm:hidden">
-        <div className="text-center py-5 border-2 border-black pl-20 pr-20">
-          Rotate your device<br></br>to landscape
-        </div>
-      </div>
-      <main className="hidden sm:block">
+      <main>
         <AnimatePresence>{page === 0 && <Credits onClick={handleEnterClick} />}</AnimatePresence>
 
         <AnimatePresence>
           {page === 1 && (
-            <motion.div key="page-1" className="p-10">
+            <motion.div
+              key="page-1"
+              className="relative p-10 flex flex-col gap-4 h-screen items-center justify-center"
+            >
               {MainBox && (
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 1 }}
-                  className="border-2 rounded-[5px] border-[#6D5C55] text-left sm:text-[16px] text-[10px] sm:px-10 sm:py-4  py-4 px-1 absolute z-10 bg-[#F1EDDD] sm:bottom-[20rem]  bottom-[40rem] sm:right-[10rem] right-[0.8rem]"
+                  className="lg:absolute static caption top-24 right-24"
                 >
-                  As the dawn of the full moon rises, our<br></br> journey will begin...
+                  As the dawn of the full moon rises, our journey will begin...
                 </motion.div>
               )}
-              <motion.div>
-                <div className="relative sm:w-full sm:h-[90vh]">
-                  <img
-                    src="/main-art.png"
-                    alt="Main Art"
-                    className="sm:absolute sm:top-[-3rem] sm:left-0 w-full h-full object-cover"
-                  />
-                </div>
-                <div className="relative bottom-[10rem] m-auto text-center font-Neela text-[#626543] text-[55px]">
-                  WELCOME, HACKER
-                </div>
+              <motion.div className="flex flex-col gap-2 items-center">
+                <img src="/hero.png" alt="Hero" className="max-w-[100%] lg:w-[90%] m-0" />
+                {buttonVisible && (
+                  <motion.button
+                    onClick={() => setPage(2)}
+                    className=" bg-[#76728B] py-2 px-10 text-[#F1EDDD] text-xl lg:text-3xl border-[3px] border-[#6D5C55] mx-auto"
+                    style={{
+                      boxShadow: "#F1EDDD 0px 0px 0px 2px, #6D5C55 0px 0px 0px 4px",
+                      WebkitTextStroke: "0.4px #320C0C",
+                    }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1 }}
+                    whileHover={{
+                      scale: 1.1,
+                      transition: { duration: 0.125, ease: [0.42, 0, 0.58, 1] },
+                    }}
+                  >
+                    NEXT
+                  </motion.button>
+                )}
               </motion.div>
-              {buttonVisible && (
-                <motion.button
-                  onClick={() => setPage(2)}
-                  className="relative bottom-[9rem] bg-[#76728B] mt-2 py-2 px-10 text-[#F1EDDD] text-3xl border-[3px] border-[#6D5C55] block m-auto"
-                  style={{
-                    boxShadow: "#F1EDDD 0px 0px 0px 2px, #6D5C55 0px 0px 0px 4px",
-                    WebkitTextStroke: "0.4px #320C0C",
-                  }}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 1 }}
-                  whileHover={{
-                    scale: 1.1,
-                    transition: { duration: 0.125, ease: [0.42, 0, 0.58, 1] },
-                  }}
-                >
-                  NEXT
-                </motion.button>
-              )}
             </motion.div>
           )}
         </AnimatePresence>
@@ -232,7 +220,7 @@ export default function Home() {
               transition={{ duration: 1, ease: "backInOut", delay: 0.5 }}
             >
               <div className="flex-1 flex items-center justify-center">
-                <img src="/art-4.png" alt="Art 2" className="sm:max-w-xl max-w-[350px]" />
+                <img src="/art-4.png" alt="Art 2" className="max-w-[90%] lg:max-w-full" />
                 {textVisible && (
                   <motion.div
                     initial={{ opacity: 0 }}
@@ -270,11 +258,10 @@ export default function Home() {
               <div className="w-px h-48 bg-[#6D5C55] mx-10 mt-20" />
             </motion.div>
           )}
-
           {page === 3 && (
             <motion.div
               key="page-3"
-              className="pt-10 flex items-center justify-between min-h-screen flex-col"
+              className="pt-10 flex items-center justify-between min-h-screen flex-col gap-4 relative"
               initial={{ y: -1000, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 1000, transition: { ease: "backIn", duration: 0.7 } }}
@@ -285,24 +272,21 @@ export default function Home() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 1 }}
-                  className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:text-[16px] text-[10px] sm:px-5 sm:py-4  py-4 px-1 absolute bg-[#F1EDDD] sm:bottom-[42rem]  bottom-[40rem] sm:right-[20rem] right-[0.8rem]"
+                  className="caption lg:absolute top-24"
                 >
-                  As the sun peaks above the horizon, casting a golden glow over the<br></br>{" "}
-                  valley; what vibrant colors will you see as the light leaks across the<br></br>{" "}
-                  plains.
+                  As the sun peaks above the horizon, casting a golden glow over the valley; what
+                  vibrant colors will you see as the light leaks across the plains?
                 </motion.div>
               )}
 
-              <div className="flex-1 flex items-center justify-center">
+              <div className="flex-1 flex flex-col items-center justify-center relative">
                 <img src="/manga2.svg" alt="Art 3" className="sm:max-w-xl max-w-[350px]" />
                 {secondAudioEnded && (
-                  <div className="border-2 rounded-[5px] border-[#6D5C55] text-center sm:text-[16px] text-[10px] sm:px-10 sm:py-4  py-4 px-1 absolute bg-[#F1EDDD] sm:bottom-[23rem] bottom-[27rem]  ">
-                    distant whistle echoed through the air, heralding<br></br> the arrival of a {" "}
-                    <i>cross-country odyssey.</i>
+                  <div className="caption lg:absolute bottom-16">
+                    distant whistle echoed through the air, heralding the arrival of a <i>cross-country odyssey.</i>
                   </div>
                 )}
               </div>
-
               <AnimatePresence>
                 {buttonVisible3 && (
                   <motion.button

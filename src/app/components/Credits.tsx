@@ -15,13 +15,13 @@ const Credits: React.FC<Props> = (props) => {
       <div className="flex justify-center items-center h-[75vh]">
         <motion.div
           whileHover={{ scale: 1.1 }}
-          className="text-center font-extrabold text-5xl bg-[#D9D9D9] text-[#76728B] rounded-full w-[500px] h-[500px] flex justify-center items-center cursor-pointer"
+          className="text-center font-extrabold text-5xl bg-[#D9D9D9] text-[#76728B] rounded-full w-48 h-48 lg:w-[500px] lg:h-[500px] flex justify-center items-center cursor-pointer"
           onClick={props.onClick}
         >
           ENTER HERE
         </motion.div>
       </div>
-      <div className="text-center text-white text-lg font-medium">
+      <div className="text-center text-white text-lg font-medium hidden sm:block">
         <p>
           Artwork by Zoya (17, Texas), and website by Faisal (18, Vermont) and Ivoine (19, Bahamas)
         </p>

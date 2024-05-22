@@ -141,7 +141,7 @@
 }
 
 body {
-  font-family: 'FixelText', sans-serif;
+  font-family: "FixelText", sans-serif;
   background-color: #f1eddd;
   -webkit-font-smoothing: antialiased;
 }
@@ -196,4 +196,8 @@ html {
   pointer-events: none;
   -webkit-animation: noise 1s steps(2) infinite;
   animation: noise 1s steps(2) infinite;
+}
+
+.caption {
+  @apply border-2 border-[#6D5C55] rounded py-4 px-2 m-1 z-10 bg-[#F1EDDD] max-w-md;
 }
