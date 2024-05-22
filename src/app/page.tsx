@@ -237,7 +237,10 @@ export default function Home() {
               <AnimatePresence>
                 {buttonVisible2 && (
                   <motion.button
-                    onClick={() => setPage(3)}
+                    onClick={() => {
+                      setPage(3);
+                      router.prefetch("/main?continue=true");
+                    }}
                     className="bg-[#76728B] mt-5 py-2 px-10 text-[#F1EDDD] text-3xl border-[3px] border-[#6D5C55] block m-auto absolute bottom-[15rem]"
                     style={{
                       boxShadow: "#F1EDDD 0px 0px 0px 2px, #6D5C55 0px 0px 0px 4px",
