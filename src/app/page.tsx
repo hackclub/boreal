@@ -118,6 +118,9 @@ export default function Home() {
   }, [page]);
 
   useEffect(() => {
+    if(window.innerWidth < 640){
+      router.push("/main?continue=true")
+    }
     if (page === 3) {
       const firstAudio = new Audio("/audio/Sunrise.mp3");
       const secondAudio = new Audio("/audio/Distant whistle.mp3");
@@ -168,7 +171,7 @@ export default function Home() {
       <img src="/flag.svg" className="absolute left-10" />
       <div className="flex items-center justify-center h-screen sm:hidden">
         <div className="text-center py-5 border-2 border-black pl-20 pr-20">
-          Rotate your device<br></br>to landscape
+          Loading...
         </div>
       </div>
       <main className="hidden sm:block">
