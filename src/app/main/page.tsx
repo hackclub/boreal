@@ -6,6 +6,8 @@ import Faq from "../components/Faq";
 import { useSearchParams } from "next/navigation";
 import Footer from "../components/Footer";
 import Credits from "../components/Credits";
+import Image from "next/image";
+import train from "../../../public/train.png";
 
 function MainPage() {
   const [allAboard, setAllAboard] = useState(false);
@@ -60,7 +62,7 @@ function MainPage() {
       </div>
       <main className="hidden sm:block">
         <div>
-          <img src="/train.png" className="max-h-[85vh] my-5 mx-auto block" draggable="false" />
+          <Image src={train} className="max-h-[85vh] my-5 mx-auto block" draggable="false" alt="The Boreal Express" priority />
           {allAboard && (
             <motion.div
               className="lg:-translate-y-16 md:-translate-y-14 sm:-translate-y-12 -translate-y-10"
