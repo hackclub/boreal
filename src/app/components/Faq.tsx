@@ -46,7 +46,10 @@ const Faq = () => {
               </div>
               <div className="text-base lg:text-[20px] mt-2">
                 Please refer to the{" "}
-                <a href="https://cloud-nwzecoeta-hack-club-bot.vercel.app/0parentsguide.pdf">
+                <a
+                  href="https://cloud-nwzecoeta-hack-club-bot.vercel.app/0parentsguide.pdf"
+                  style={{ color: 'blue', textDecoration: 'underline' }}
+                >
                   parents' guide
                 </a>
                 &nbsp;for additional information. If needed, your parents can
