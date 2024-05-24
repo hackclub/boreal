@@ -1,5 +1,5 @@
 "use client";
-
+import { HydrationProvider, Server, Client } from "react-hydration-provider";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -38,7 +38,7 @@ export default function Home() {
     setPage(1);
     playBgAudio();
   };
-
+  
   useEffect(() => {
     if (page === 1) {
       document.body.style.overflow = "hidden";
@@ -165,6 +165,8 @@ export default function Home() {
 
   return (
     <>
+    <HydrationProvider>
+      <Client>
       <main>
         <AnimatePresence>{page === 0 && <Credits onClick={handleEnterClick} />}</AnimatePresence>
 
@@ -185,7 +187,7 @@ export default function Home() {
                 </motion.div>
               )}
               <motion.div className="flex flex-col gap-2 items-center">
-                <img src="/hero.png" alt="Hero" className="max-w-[100%] lg:w-[90%] m-0" />
+                <img src="/hero.png" alt="Hero" className="max-w-[100%] lg:w-[75%] m-0" />
                 {buttonVisible && (
                   <motion.button
                     onClick={() => setPage(2)}
@@ -328,6 +330,8 @@ export default function Home() {
           )}
         </AnimatePresence>
       </main>
+      </Client >
+      </HydrationProvider>
     </>
   );
 }
