@@ -139,11 +139,15 @@
   font-weight: 100;
   font-style: italic;
 }
+::-webkit-scrollbar {
+  width: 0;  
+}
 
 body {
   font-family: "FixelText", sans-serif;
   background-color: #f1eddd;
   -webkit-font-smoothing: antialiased;
+
 }
 
 @keyframes pulse {
