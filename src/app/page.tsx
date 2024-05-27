@@ -187,7 +187,7 @@ export default function Home() {
                 </motion.div>
               )}
               <motion.div className="flex flex-col gap-2 items-center">
-                <img src="/hero.png" alt="Hero" className="max-w-[100%] lg:w-[75%] m-0" />
+                <img src="/hero.webp" alt="Hero" className="max-w-[100%] lg:w-[75%] m-0" />
                 {buttonVisible && (
                   <motion.button
                     onClick={() => setPage(2)}
