@@ -12,7 +12,7 @@ export default function RootLayout({
       <Meta 
         name="Hack Club" 
         title="The Boreal Express" 
-        image="/meta.png"
+        image="https://boreal.hackclub.com/meta.png"
         description="Every summer Hack Clubbers do something special. We spend hours building projects we care about; all for one goal: to build the world we want to live in. Join us aboard The Boreal Express to build the next chapter of that journey."
       />
       <body>
