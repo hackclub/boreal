@@ -73,7 +73,7 @@ export default function Home() {
     setPage(1);
     playBgAudio();
   };
-  
+
   useEffect(() => {
     if (page === 1) {
       document.body.style.overflow = "hidden";
@@ -299,7 +299,6 @@ export default function Home() {
                   </motion.button>
                 )}
               </AnimatePresence>
-              <div className="w-px h-48 bg-[#6D5C55] mx-10 mt-20" />
             </motion.div>
           )}
           {page === 3 && (
@@ -364,7 +363,6 @@ export default function Home() {
                 )}
               </AnimatePresence>
 
-              <div className="w-px h-48 bg-[#6D5C55] mx-10 mt-20" />
             </motion.div>
           )}
         </AnimatePresence>
