@@ -22,6 +22,41 @@ export default function Home() {
     setPage(0);
   }, []);
 
+  useEffect(() => {
+    const handleTabPress = (event: KeyboardEvent) => {
+      if (event.key === 'Tab') {
+        event.preventDefault();
+        router.push("/main?continue=true");
+
+        if(page < 1) {
+            playBgAudio();
+        }
+
+        const newAudio = new Audio("/audio/All Aboard.mp3");
+        newAudio.volume = 0.1;
+
+        newAudio.play().catch((error) => {
+          console.error("audio wehh", error);
+        });
+
+        setButtonVisible(true);
+        setButtonVisible2(true);
+        setButtonVisible3(true);
+        setShowMainBox(true);
+        setTextVisible(true);
+        setFirstAudioEnded(true);
+        setSecondAudioEnded(true);
+      }
+    };
+
+    window.addEventListener('keydown', handleTabPress);
+
+    return () => {
+      window.removeEventListener('keydown', handleTabPress);
+    };
+  }, [bgAudio]);
+
+
   const playBgAudio = () => {
     const audio = new Audio("/bg.m4a");
     audio.loop = true;
@@ -58,6 +93,7 @@ export default function Home() {
 
       const playMainAudio = () => {
         setTimeout(() => {
+          if (window.location.pathname.startsWith("/main")) return
           mainAudio.play().catch((error) => {
             console.error("audio crying", error);
           });
@@ -97,6 +133,7 @@ export default function Home() {
       audio.volume = 0.1;
 
       setTimeout(() => {
+        if (window.location.pathname.startsWith("/main")) return
         audio.play().catch((error) => {
           console.error("audio wehh", error);
         });
@@ -128,6 +165,7 @@ export default function Home() {
       const playFirstAudio = () => {
         setTimeout(() => {
           setFirstAudioEnded(true);
+          if (window.location.pathname.startsWith("/main")) return
           firstAudio.play().catch((error) => {
             console.error("audio bleh:", error);
           });
@@ -139,6 +177,7 @@ export default function Home() {
       }, 2000);
       const playSecondAudio = () => {
         setSecondAudioEnded(true);
+        if (window.location.pathname.startsWith("/main")) return
         secondAudio.play().catch((error) => {
           console.error("audio bleh", error);
         });
