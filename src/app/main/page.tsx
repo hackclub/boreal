@@ -18,7 +18,7 @@ function MainPage() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setAllAboard(true);
-    }, 4500);
+    }, 100);
 
     if (window.matchMedia("(max-width: 992px)").matches) {
       setAllAboard(true);
@@ -67,7 +67,7 @@ function MainPage() {
               className="lg:-translate-y-16 -translate-y-6"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 2 }}
             >
               <h1 className="text-[#626543] stroke lg:text-[40px] font-Neela text-center md:text-3xl sm:text-xl mb-1 lg:mb-2">
                 THE BOREAL EXPRESS

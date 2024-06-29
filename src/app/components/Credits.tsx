@@ -26,6 +26,7 @@ const Credits: React.FC<Props> = (props) => {
           Artwork by Zoya (17, Texas), and website by Faisal (18, Vermont) and Ivoine (19, Bahamas)
         </p>
         <p>Voice by Deryn Oliver (As seen in Harry Potter and the Chamber of Secrets)</p>
+        <p><br/><i>(Press TAB to skip)</i></p>
       </div>
       {/* </div>
       </div> */}
