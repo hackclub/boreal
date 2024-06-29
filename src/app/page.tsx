@@ -38,14 +38,6 @@ export default function Home() {
         newAudio.play().catch((error) => {
           console.error("audio wehh", error);
         });
-
-        setButtonVisible(true);
-        setButtonVisible2(true);
-        setButtonVisible3(true);
-        setShowMainBox(true);
-        setTextVisible(true);
-        setFirstAudioEnded(true);
-        setSecondAudioEnded(true);
       }
     };
 
